@@ -16,10 +16,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(org-agenda-files (quote ("~/workspace/scratch/playground.org")))
+ '(ns-alternate-modifier 'super)
+ '(ns-command-modifier 'meta)
+ '(org-agenda-files '("~/workspace/scratch/playground.org"))
  '(org-return-follows-link t)
  '(org-startup-truncated nil)
- '(package-selected-packages (quote (evil))))
+ '(package-selected-packages '(evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -53,4 +55,5 @@
 ;; Evil
 (require 'evil)
 (evil-mode 1)
+
 
