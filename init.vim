@@ -1,18 +1,33 @@
-" Plugins (vim-plug)
+" See colors at https://jonasjacek.github.io/colors/
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS (vim-plug)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 let g:plug_window = 'bot new | bot res 10'
 Plug 'neoclide/coc.nvim', {'branch': 'v0.0.77'}
 Plug 'preservim/nerdtree'
+Plug 'tpope/vim-sleuth'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
-" Tabs
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
 
-" Line Numbers
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" APPEARANCE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" INDENTATION, TABS, RULERS, NUMBERS
+set smartindent
+set expandtab
+set ruler
 set number relativenumber
+
+
+" HIGHLIGHTING
+syntax on
 
 " Ruler
 set colorcolumn=80
@@ -21,6 +36,25 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " CursorLine
 set cursorline
 highlight CursorLine ctermbg=235 cterm=none
+
+" Show tab markers
+set list lcs=tab:\|\
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" REMAPPINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-n> :NERDTreeToggle<CR>
+map <C-b> :buffers<CR>:buffer<Space>
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGIN CONFIG
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" LANGUAGE SERVER AUTOCOMPLETE
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
@@ -32,3 +66,10 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FILE TYPE ASSOCIATIONS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au BufNewFile,BufRead Jenkinsfile setf groovy
