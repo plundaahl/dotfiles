@@ -73,3 +73,5 @@ inoremap <silent><expr> <Tab>
 " FILE TYPE ASSOCIATIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead Jenkinsfile setf groovy
+au BufNewFile,BufRead *.tsx set syntax=typescript
+
