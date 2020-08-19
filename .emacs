@@ -21,7 +21,9 @@
  '(org-agenda-files '("~/workspace/scratch/playground.org"))
  '(org-return-follows-link t)
  '(org-startup-truncated nil)
- '(package-selected-packages '(evil)))
+ '(package-selected-packages '(evil))
+ '(ring-bell-function 'flash-mode-line)
+ '(visible-bell t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -57,3 +59,11 @@
 (evil-mode 1)
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; FUNCTIONS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Flash the current mode line
+(defun flash-mode-line ()
+  (invert-face 'mode-line)
+  (run-with-timer 0.1 nil #'invert-face 'mode-line))
