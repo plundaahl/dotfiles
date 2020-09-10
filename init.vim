@@ -7,7 +7,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 let g:plug_window = 'bot new | bot res 10'
-Plug 'neoclide/coc.nvim', {'branch': 'v0.0.77'}
+Plug 'neoclide/coc.nvim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-sleuth'
 call plug#end()
