@@ -7,9 +7,12 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 let g:plug_window = 'bot new | bot res 10'
-Plug 'neoclide/coc.nvim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-sleuth'
+
+Plug 'neoclide/coc.nvim'
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json']
+
 call plug#end()
 
 
