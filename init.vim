@@ -10,7 +10,6 @@ let g:plug_window = 'bot new | bot res 10'
 Plug 'neoclide/coc.nvim', {'branch': 'v0.0.77'}
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-sleuth'
-Plug 'Yggdroot/indentLine'
 call plug#end()
 
 
@@ -36,9 +35,6 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " CursorLine
 set cursorline
 highlight CursorLine ctermbg=235 cterm=none
-
-" Show tab markers
-set list lcs=tab:\|\
 
 
 
