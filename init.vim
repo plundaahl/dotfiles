@@ -47,6 +47,9 @@ highlight CursorLine ctermbg=235 cterm=none
 map <C-n> :NERDTreeRefreshRoot<CR>:NERDTreeToggle<CR>
 map <C-b> :buffers<CR>:buffer<Space>
 
+" Clears search highlight
+map <C-s> :let @/ = ""<CR>
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
