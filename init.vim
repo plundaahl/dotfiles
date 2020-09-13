@@ -10,8 +10,14 @@ let g:plug_window = 'bot new | bot res 10'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-sleuth'
 
+" Intellisense
 Plug 'neoclide/coc.nvim'
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json']
+
+Plug 'vim-airline/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_symbols_ascii = 1
+let g:airline_focuslost_inactive = 1
 
 call plug#end()
 
