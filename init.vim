@@ -44,7 +44,7 @@ highlight CursorLine ctermbg=235 cterm=none
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " REMAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeRefreshRoot<CR>:NERDTreeToggle<CR>
 map <C-b> :buffers<CR>:buffer<Space>
 
 
