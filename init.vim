@@ -13,7 +13,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Intellisense
 Plug 'neoclide/coc.nvim'
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-python']
 
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
