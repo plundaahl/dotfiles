@@ -9,6 +9,7 @@ call plug#begin()
 let g:plug_window = 'bot new | bot res 10'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-sleuth'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Intellisense
 Plug 'neoclide/coc.nvim'
@@ -55,6 +56,7 @@ map <C-b> :buffers<CR>:buffer<Space>
 
 " Clears search highlight
 map <C-s> :let @/ = ""<CR>
+map <S-f> :FZF<CR>
 
 
 
