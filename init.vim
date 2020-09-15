@@ -56,7 +56,9 @@ map <C-b> :buffers<CR>:buffer<Space>
 " Clears search highlight
 map <C-s> :let @/ = ""<CR>
 
-
+" Buffer Nav
+map <Leader>] :bn<CR>
+map <Leader>[ :bp<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN CONFIG
