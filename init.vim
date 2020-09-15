@@ -58,7 +58,9 @@ map <C-b> :buffers<CR>:buffer<Space>
 map <C-s> :let @/ = ""<CR>
 map <S-f> :FZF<CR>
 
-
+" Buffer Nav
+map <Leader>] :bn<CR>
+map <Leader>[ :bp<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN CONFIG
