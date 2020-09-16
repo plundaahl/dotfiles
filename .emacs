@@ -16,13 +16,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(ns-alternate-modifier 'super)
- '(ns-command-modifier 'meta)
- '(org-agenda-files '("~/workspace/scratch/playground.org"))
+ '(ns-alternate-modifier (quote super))
+ '(ns-command-modifier (quote meta))
+ '(org-agenda-files (quote ("~/workspace/scratch/playground.org")))
+ '(org-hide-emphasis-markers t)
  '(org-return-follows-link t)
  '(org-startup-truncated nil)
- '(package-selected-packages '(evil))
- '(ring-bell-function 'flash-mode-line)
+ '(package-selected-packages (quote (## org-bullets evil)))
+ '(ring-bell-function (quote flash-mode-line))
  '(visible-bell t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -39,6 +40,9 @@
 (add-to-list 'package-archives
 	     '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
+
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
