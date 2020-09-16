@@ -56,7 +56,9 @@ map <C-b> :buffers<CR>:buffer<Space>
 
 " Clears search highlight
 map <C-s> :let @/ = ""<CR>
-map <S-f> :FZF<CR>
+
+" FZF
+map <Leader>f :FZF<CR>
 
 " Buffer Nav
 map <Leader>] :bn<CR>
