@@ -52,10 +52,12 @@ highlight CursorLine ctermbg=235 cterm=none
 " REMAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-n> :NERDTreeRefreshRoot<CR>:NERDTreeToggle<CR>
-map <C-b> :buffers<CR>:buffer<Space>
+map <Leader>b :buffers<CR>:buffer<Space>
+map <Leader>[ :bp<CR>
+map <Leader>] :bn<CR>
 
 " Clears search highlight
-map <C-s> :let @/ = ""<CR>
+map <Leader>c :let @/ = ""<CR>
 
 " FZF
 map <Leader>f :FZF<CR>
