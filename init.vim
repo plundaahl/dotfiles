@@ -51,7 +51,7 @@ highlight CursorLine ctermbg=235 cterm=none
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " REMAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-n> :NERDTreeRefreshRoot<CR>:NERDTreeToggle<CR>
+map <C-n> :call ToggleNerdtree()<CR>
 map <Leader>b :buffers<CR>:buffer<Space>
 map <Leader>[ :bp<CR>
 map <Leader>] :bn<CR>
@@ -84,6 +84,22 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 
+" NERDTree
+let NERDTreeQuitOnOpen = 1
+
+" Close NERDTree if it's the only remaining buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+function! ToggleNerdtree() abort
+  if (exists("b:NERDTree") && b:NERDTree.isTabTree())
+    :NERDTreeToggle
+  elseif (expand('%:p') != '')
+    :NERDTreeFind
+  else
+    :exec 'NERDTreeToggle '.getcwd()
+  endif
+  :NERDTreeRefreshRoot
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILE TYPE ASSOCIATIONS
