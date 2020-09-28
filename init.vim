@@ -1,7 +1,6 @@
 " See colors at https://jonasjacek.github.io/colors/
 
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS (vim-plug)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -33,6 +32,16 @@ set smartindent
 set expandtab
 set ruler
 set number relativenumber
+
+map <Leader><Tab>1 :call Indent(1)<CR>
+map <Leader><Tab>2 :call Indent(2)<CR>
+map <Leader><Tab>3 :call Indent(4)<CR>
+map <Leader><Tab>4 :call Indent(8)<CR>
+
+function! Indent(indent) abort
+  :exec 'set shiftwidth=' . a:indent
+  :exec 'set tabstop=' . a:indent
+endfunction
 
 
 " HIGHLIGHTING
