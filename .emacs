@@ -23,7 +23,7 @@
  '(org-hide-emphasis-markers t)
  '(org-return-follows-link t)
  '(org-startup-truncated nil)
- '(package-selected-packages '(## org-bullets evil))
+ '(package-selected-packages '(ob-http ## org-bullets evil))
  '(ring-bell-function 'flash-mode-line)
  '(visible-bell t))
 (custom-set-faces
@@ -45,6 +45,11 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+(require 'ob-http)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (http . t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; MODE CONFIGURATIONS
