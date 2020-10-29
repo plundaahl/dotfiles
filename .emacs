@@ -47,9 +47,13 @@
 
 (require 'ob-http)
 (org-babel-do-load-languages
- 'org-babel-load-languages
- '((emacs-lisp . t)
-   (http . t)))
+  'org-babel-load-languages
+  '(
+    (emacs-lisp . t)
+    (http . t)
+    (shell . t)
+  )
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; MODE CONFIGURATIONS
