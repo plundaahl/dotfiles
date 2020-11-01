@@ -72,6 +72,8 @@
 (use-package helm
   :ensure t
   :pin melpa-stable
+  :init
+  (helm-mode 1)
   :bind (("M-x" . helm-M-x)
 	 ("C-x C-b" . helm-buffers-list)
 	 ("C-x C-f" . helm-find-files)
@@ -98,7 +100,6 @@
 
 (global-visual-line-mode 1)
 (transient-mark-mode 1)
-(helm-mode 1)
 
 ;; CUSTOM FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;
