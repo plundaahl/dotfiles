@@ -1,81 +1,67 @@
 ;; -*- mode: elisp -*-
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; THEME, APPEARANCE, ETC.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq inhibit-splash-screen t)
 (load-theme 'wombat t)
 
+(eval-when-compile
+  (require 'use-package))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; CUSTOMIZED VARIABLES (don't edit)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(ns-alternate-modifier 'super)
- '(ns-command-modifier 'meta)
- '(org-adapt-indentation nil)
- '(org-agenda-files '("~/workspace/scratch/playground.org"))
- '(org-hide-emphasis-markers t)
- '(org-return-follows-link t)
- '(org-startup-truncated nil)
- '(package-selected-packages '(ob-http ## org-bullets evil))
- '(ring-bell-function 'flash-mode-line)
- '(visible-bell t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; PACKAGES
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
 
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
-(require 'ob-http)
-(org-babel-do-load-languages
-  'org-babel-load-languages
-  '(
-    (emacs-lisp . t)
-    (http . t)
-    (shell . t)
-  )
-)
+;; CUSTOMIZED VARIABLES
+;;;;;;;;;;;;;;;;;;;;;;;
+(custom-set-variables
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(inhibit-startup-screen nil)
+ '(ns-alternate-modifier 'super)
+ '(ns-command-modifier 'meta)
+ '(org-adapt-indentation nil)
+ '(org-agenda-files '("~/org"))
+ '(org-hide-emphasis-markers t)
+ '(org-return-follows-link t)
+ '(org-startup-truncated nil)
+ '(package-selected-packages '(use-package ob-http))
+ '(ring-bell-function 'flash-mode-line)
+ '(visible-bell t))
+(custom-set-faces
+ ;; If there is more than one, they won't work right.
+ )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; PACKAGES
+;;;;;;;;;;;
+(use-package ob-http
+  :ensure t
+  :pin melpa-stable)
+
+(use-package org
+  :ensure t
+  :pin melpa-stable
+  :config
+  (org-babel-do-load-languages
+    'org-babel-load-languages
+    '(
+      (emacs-lisp . t)
+      (http . t)
+      (shell . t)
+    )
+  ))
+
+
 ;; MODE CONFIGURATIONS
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
 
-;; Global Visual Line
 (global-visual-line-mode 1)
-
-;; Transient Mark
 (transient-mark-mode 1)
 
-;; Org
-(require 'org)
 
-;; Evil
-(require 'evil)
-(evil-mode 1)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; FUNCTIONS
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; CUSTOM FUNCTIONS
+;;;;;;;;;;;;;;;;;;;
 
 ;; Flash the current mode line
 (defun flash-mode-line ()
