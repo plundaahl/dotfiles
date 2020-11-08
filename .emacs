@@ -32,6 +32,7 @@
      (file . find-file)
      (wl . wl-other-frame)))
  '(org-return-follows-link t)
+ '(org-roam-file-exclude-regexp "/\\!.+\\.org/")
  '(org-startup-truncated nil)
  '(package-selected-packages '(org-roam use-package ob-http))
  '(ring-bell-function 'flash-mode-line)
