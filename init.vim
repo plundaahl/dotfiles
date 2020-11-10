@@ -53,6 +53,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " CursorLine
 set cursorline
+set cursorcolumn
 highlight CursorLine ctermbg=235 cterm=none
 highlight CursorColumn ctermbg=235 cterm=none
 
