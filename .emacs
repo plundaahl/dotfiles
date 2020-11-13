@@ -24,6 +24,16 @@
  '(ns-command-modifier 'meta)
  '(org-adapt-indentation nil)
  '(org-agenda-files '("~/org"))
+ '(org-capture-templates
+   '(("t" "Todo" entry
+      (file "~/org/!Tasks.org")
+      "* ?\n%i\n%a")
+     ("j" "Journal" entry
+      (file+olp+datetree "~/org/journal.org")
+      "* %?\nEntered on %U\n%i\n%a")
+     ("d" "Decision" entry
+      (file "~/org/decisions.org")
+      "* %?\n*Date* %t (morning/afternoon/evening)\n\n*Mental/Physical State*\n\n*Problem Statement or Frame*\n\n*Variables that Govern the Situation*\n\n*Alternatives Considered and Reasons for Decision*\n\n*Range of Possible Outcomes*\n\n*Expected Outcomes, Reasoning, and Probabilities*")))
  '(org-hide-emphasis-markers t)
  '(org-link-frame-setup
    '((vm . vm-visit-folder-other-frame)
