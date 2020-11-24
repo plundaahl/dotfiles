@@ -64,8 +64,8 @@ highlight CursorColumn ctermbg=235 cterm=none
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-n> :call ToggleNerdtree()<CR>
 map <Leader>b :buffers<CR>:buffer<Space>
-map <Leader>[ :bp<CR>
-map <Leader>] :bn<CR>
+map <Leader>o :bp<CR>
+map <Leader>p :bn<CR>
 map <Leader>q :bd<CR>
 
 " Clears search highlight
