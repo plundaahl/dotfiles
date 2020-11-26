@@ -19,6 +19,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(global-hl-line-mode t)
  '(inhibit-startup-screen nil)
  '(ns-alternate-modifier 'super)
  '(ns-command-modifier 'meta)
@@ -27,13 +28,31 @@
  '(org-capture-templates
    '(("t" "Todo" entry
       (file "~/org/!Tasks.org")
-      "* ?\n%i\n%a")
+      "* ?
+%i
+%a")
      ("j" "Journal" entry
       (file+olp+datetree "~/org/journal.org")
-      "* %?\nEntered on %U\n%i\n%a")
+      "* %?
+Entered on %U
+%i
+%a")
      ("d" "Decision" entry
       (file "~/org/decisions.org")
-      "* %?\n*Date* %t (morning/afternoon/evening)\n\n*Mental/Physical State*\n\n*Problem Statement or Frame*\n\n*Variables that Govern the Situation*\n\n*Alternatives Considered and Reasons for Decision*\n\n*Range of Possible Outcomes*\n\n*Expected Outcomes, Reasoning, and Probabilities*")))
+      "* %?
+*Date* %t (morning/afternoon/evening)
+
+*Mental/Physical State*
+
+*Problem Statement or Frame*
+
+*Variables that Govern the Situation*
+
+*Alternatives Considered and Reasons for Decision*
+
+*Range of Possible Outcomes*
+
+*Expected Outcomes, Reasoning, and Probabilities*")))
  '(org-hide-emphasis-markers t)
  '(org-link-frame-setup
    '((vm . vm-visit-folder-other-frame)
@@ -52,7 +71,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(hl-line ((t (:extend t :background "#303030" :underline nil)))))
 
 
 ;; PACKAGES
