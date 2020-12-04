@@ -19,6 +19,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_symbols_ascii = 1
 let g:airline_focuslost_inactive = 1
 
+Plug 'jremmen/vim-ripgrep'
+let g:rg_highlight = 1
+let g:rg_derive_root = 1
+
 call plug#end()
 
 
