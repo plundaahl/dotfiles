@@ -64,8 +64,10 @@ highlight CursorColumn ctermbg=235 cterm=none
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" REMAPPINGS
+" REMAPPINGS & BEHAVIOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set mouse=a
+
 map <C-n> :call ToggleNerdtree()<CR>
 map <Leader>b :buffers<CR>:buffer<Space>
 map <Leader>o :bp<CR>
