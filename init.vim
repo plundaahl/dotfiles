@@ -23,6 +23,10 @@ Plug 'jremmen/vim-ripgrep'
 let g:rg_highlight = 1
 let g:rg_derive_root = 1
 
+" Typescript Highlighting (see https://github.com/peitalin/vim-jsx-typescript)
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 call plug#end()
 
 
@@ -123,5 +127,5 @@ endfunction
 " FILE TYPE ASSOCIATIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead Jenkinsfile setf groovy
-au BufNewFile,BufRead *.tsx set syntax=typescript
+au BufNewFile,BufRead *.tsx,*.jsx set syntax=typescriptreact
 
