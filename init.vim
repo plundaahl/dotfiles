@@ -127,5 +127,5 @@ endfunction
 " FILE TYPE ASSOCIATIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead Jenkinsfile setf groovy
-au BufNewFile,BufRead *.tsx,*.jsx set syntax=typescriptreact
+au BufNewFile,BufRead *.tsx,*.jsx set syntax=typescript
 
