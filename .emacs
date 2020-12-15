@@ -28,9 +28,7 @@
  '(org-capture-templates
    '(("t" "Todo" entry
       (file "~/org/!Tasks.org")
-      "* ?
-%i
-%a")
+      "* TODO %?" :prepend t)
      ("j" "Journal" entry
       (file+olp+datetree "~/org/journal.org")
       "* %?
@@ -60,7 +58,9 @@ Entered on %U
      (gnus . org-gnus-no-new-news)
      (file . find-file)
      (wl . wl-other-frame)))
+ '(org-log-into-drawer t)
  '(org-return-follows-link t)
+ '(org-roam-directory "~/org")
  '(org-roam-file-exclude-regexp "/\\!.+\\.org/")
  '(org-startup-truncated nil)
  '(package-selected-packages '(org-roam use-package ob-http))
