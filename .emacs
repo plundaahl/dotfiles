@@ -25,6 +25,10 @@
  '(ns-command-modifier 'meta)
  '(org-adapt-indentation nil)
  '(org-agenda-files '("~/org"))
+ '(org-agenda-restore-windows-after-quit t)
+ '(org-agenda-todo-ignore-scheduled 0)
+ '(org-agenda-todo-list-sublevels nil)
+ '(org-agenda-window-setup 'reorganize-frame)
  '(org-capture-templates
    '(("t" "Todo" entry
       (file "~/org/!Tasks.org")
@@ -53,6 +57,8 @@ Entered on %U
 *Range of Possible Outcomes*
 
 *Expected Outcomes, Reasoning, and Probabilities*")))
+ '(org-enforce-todo-checkbox-dependencies t)
+ '(org-enforce-todo-dependencies t)
  '(org-hide-emphasis-markers t)
  '(org-link-frame-setup
    '((vm . vm-visit-folder-other-frame)
@@ -60,9 +66,13 @@ Entered on %U
      (gnus . org-gnus-no-new-news)
      (file . find-file)
      (wl . wl-other-frame)))
+ '(org-log-into-drawer t)
  '(org-return-follows-link t)
+ '(org-roam-directory "~/org")
  '(org-roam-file-exclude-regexp "/\\!.+\\.org/")
  '(org-startup-truncated nil)
+ '(org-stuck-projects '("+PROJECT/-DONE" ("TODO") nil "SCHEDULED<"))
+ '(org-tags-exclude-from-inheritance '("PROJECT"))
  '(package-selected-packages '(org-roam use-package ob-http))
  '(ring-bell-function 'flash-mode-line)
  '(visible-bell t))
@@ -119,7 +129,7 @@ Entered on %U
   (org-roam-directory "~/org")
   :bind (:map org-roam-mode-map
 	  (("C-c n l" . org-roam)
-	   ("C-c n f" . org-roam-find-file)
+
            ("C-c n g" . org-roam-graph))
 	  :map org-mode-map
           (("C-c n i" . org-roam-insert))
