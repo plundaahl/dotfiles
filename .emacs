@@ -1,15 +1,8 @@
 ;; -*- mode: elisp -*-
 
+(load "~/dotfiles/emacs/init-use-package.el")
+
 (load-theme 'wombat t)
-
-(eval-when-compile
-  (require 'use-package))
-
-(require 'package)
-(add-to-list 'package-archives
-	     '("melpa-stable" . "https://stable.melpa.org/packages/"))
-(package-initialize)
-
 
 ;; CUSTOMIZED VARIABLES
 ;;;;;;;;;;;;;;;;;;;;;;;
