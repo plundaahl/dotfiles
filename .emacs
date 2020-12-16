@@ -84,6 +84,7 @@
 (use-package org
   :ensure t
   :pin melpa-stable
+  :bind (("C-c c" . org-capture))
   :config
   (org-babel-do-load-languages
     'org-babel-load-languages
