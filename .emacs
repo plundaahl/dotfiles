@@ -23,18 +23,12 @@
  '(org-agenda-todo-list-sublevels nil)
  '(org-agenda-window-setup 'reorganize-frame)
  '(org-capture-templates
-   '(("t" "Todo" entry
-      (file "~/org/!Tasks.org")
-      "* TODO %?" :prepend t)
-     ("j" "Journal" entry
-      (file+olp+datetree "~/org/journal.org")
-      "* %?
-Entered on %U
-%i
-%a")
-     ("d" "Decision" entry
-      (file "~/org/decisions.org")
-      "* %?
+   '(("t" "Todo" entry (file "~/org/!Tasks.org")
+          "* TODO %?" :prepend t)
+     ("m" "Meeting" entry (file "~/org/!Tasks.org")
+	  "* TODO Meeting: %? :MEETING:\n%t" :clock-in t :clock-resume t)
+     ("d" "Decision" entry (file "~/org/decisions.org")
+          "* %?
 *Date* %t (morning/afternoon/evening)
 
 *Mental/Physical State*
