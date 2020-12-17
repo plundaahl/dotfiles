@@ -24,9 +24,9 @@
  '(org-agenda-window-setup 'reorganize-frame)
  '(org-capture-templates
    '(("t" "Todo" entry (file "~/org/!Tasks.org")
-          "* TODO %?" :prepend t)
+          "* TODO %?\n%t" :prepend t)
      ("m" "Meeting" entry (file "~/org/!Tasks.org")
-	  "* TODO Meeting: %?\n%t" :clock-in t :clock-resume t)
+	  "* TODO Meeting%?\n%t" :clock-in t :clock-resume t)
      ("d" "Decision" entry (file "~/org/decisions.org")
           "* %?
 *Date* %t (morning/afternoon/evening)
