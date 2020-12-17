@@ -26,7 +26,7 @@
    '(("t" "Todo" entry (file "~/org/!Tasks.org")
           "* TODO %?" :prepend t)
      ("m" "Meeting" entry (file "~/org/!Tasks.org")
-	  "* TODO Meeting: %? :MEETING:\n%t" :clock-in t :clock-resume t)
+	  "* TODO Meeting: %?\n%t" :clock-in t :clock-resume t)
      ("d" "Decision" entry (file "~/org/decisions.org")
           "* %?
 *Date* %t (morning/afternoon/evening)
