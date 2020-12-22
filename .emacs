@@ -79,6 +79,7 @@ Thanks!
  '(org-return-follows-link t)
  '(org-roam-directory "~/org")
  '(org-roam-file-exclude-regexp "/\\!.+\\.org/")
+ '(org-roam-title-sources '((title alias headline) alias))
  '(org-startup-truncated nil)
  '(org-stuck-projects '("+PROJECT/-DONE" ("TODO") nil "SCHEDULED<"))
  '(org-tags-exclude-from-inheritance '("PROJECT"))
