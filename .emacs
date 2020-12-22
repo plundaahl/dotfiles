@@ -23,12 +23,17 @@
  '(org-agenda-todo-list-sublevels nil)
  '(org-agenda-window-setup 'reorganize-frame)
  '(org-capture-templates
-   '(("t" "Todo" entry (file "~/org/!Tasks.org")
-          "* TODO %?\n%t" :prepend t)
-     ("m" "Meeting" entry (file "~/org/!Tasks.org")
-          "* TODO Meeting%?\n%t" :clock-in t :clock-resume t)
-     ("o" "Opp (Sales)" entry (file "~/org/opps.org")
-          "* %^{opp name}
+   '(("t" "Todo" entry
+      (file "~/org/!Tasks.org")
+      "* TODO %?
+%t" :prepend t)
+     ("m" "Meeting" entry
+      (file "~/org/!Tasks.org")
+      "* TODO Meeting%?
+%t" :clock-in t :clock-resume t)
+     ("o" "Opp (Sales)" entry
+      (file "~/org/opps.org")
+      "* %^{opp name}
 *Message for Mark*
 Hi Mark,
 
@@ -51,8 +56,9 @@ Thanks!
 ** Stakeholders
 ** Timeline
 ** Environments, Code, Artifacts")
-     ("d" "Decision" entry (file "~/org/decisions.org")
-          "* %?
+     ("d" "Decision" entry
+      (file "~/org/decisions.org")
+      "* %?
 *Date* %t (morning/afternoon/evening)
 
 *Mental/Physical State*
@@ -76,6 +82,7 @@ Thanks!
      (file . find-file)
      (wl . wl-other-frame)))
  '(org-log-into-drawer t)
+ '(org-plantuml-jar-path "~/plantuml.jar")
  '(org-return-follows-link t)
  '(org-roam-directory "~/org")
  '(org-roam-file-exclude-regexp "/\\!.+\\.org/")
@@ -116,8 +123,7 @@ Thanks!
       (emacs-lisp . t)
       (http . t)
       (shell . t)
-    )
-  ))
+      (plantuml . t))))
 
 (use-package helm
   :ensure t
