@@ -158,3 +158,6 @@ Thanks!
 (defun flash-mode-line ()
   (invert-face 'mode-line)
   (run-with-timer 0.1 nil 'invert-face 'mode-line))
+
+(if (file-exists-p "~/.emacs-per-machine.el")
+    (load "~/.emacs-per-machine.el"))
