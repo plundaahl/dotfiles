@@ -113,6 +113,10 @@ Thanks!
   :ensure t
   :pin melpa-stable)
 
+(use-package ob-typescript
+  :ensure t
+  :pin melpa-stable)
+
 (use-package org
   :ensure t
   :pin melpa-stable
@@ -124,7 +128,14 @@ Thanks!
       (emacs-lisp . t)
       (http . t)
       (shell . t)
-      (plantuml . t))))
+      (typescript . t)
+      (js . t)
+      (plantuml . t)))
+  ;; Fix for ob-js
+  ;; Taken from https://gist.github.com/mrspeaker/c3b7b8d0b0b96b1a012d736b22d12b2e
+  (setq org-babel-js-function-wrapper
+      "process.stdout.write(JSON.stringify(require('util').inspect(function(){\n%s\n}(), { maxArrayLength: null, maxStringLength: null, breakLength: Infinity, compact: true })))")
+  )
 
 (use-package helm
   :ensure t
@@ -151,6 +162,10 @@ Thanks!
 	  :map org-mode-map
           (("C-c n i" . org-roam-insert))
           (("C-c n I" . org-roam-insert-immediate))))
+
+(use-package ob-async
+  :ensure t
+  :pin melpa-stable)
 
 ;; MODE CONFIGURATIONS
 ;;;;;;;;;;;;;;;;;;;;;;
