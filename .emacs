@@ -114,8 +114,7 @@ Thanks!
   :pin melpa-stable)
 
 (use-package ob-typescript
-  :ensure t
-  :pin melpa-stable)
+  :ensure t)
 
 (use-package org
   :ensure t
