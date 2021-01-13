@@ -88,6 +88,7 @@ Thanks!
  '(org-roam-file-exclude-regexp "/\\!.+\\.org/")
  '(org-roam-title-sources '((title alias headline) alias))
  '(org-startup-truncated nil)
+ '(org-startup-with-inline-images t)
  '(org-stuck-projects '("+PROJECT/-DONE" ("TODO") nil "SCHEDULED<"))
  '(org-tags-exclude-from-inheritance '("PROJECT"))
  '(package-selected-packages '(org-roam use-package ob-http))
