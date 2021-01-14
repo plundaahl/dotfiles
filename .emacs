@@ -1,6 +1,7 @@
 ;; -*- mode: elisp -*-
 
 (load "~/dotfiles/emacs/init-use-package.el")
+(load "~/dotfiles/emacs/org-archive-subtree.el")
 
 (load-theme 'wombat t)
 
@@ -19,6 +20,7 @@
  '(org-adapt-indentation nil)
  '(org-agenda-files '("~/org"))
  '(org-agenda-restore-windows-after-quit t)
+ '(org-agenda-skip-archived-trees nil)
  '(org-agenda-todo-ignore-scheduled 0)
  '(org-agenda-todo-list-sublevels nil)
  '(org-agenda-window-setup 'reorganize-frame)
