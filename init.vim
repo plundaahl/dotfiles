@@ -77,7 +77,8 @@ map <C-n> :call ToggleNerdtree()<CR>
 map <Leader>b :buffers<CR>:buffer<Space>
 map <Leader>o :bp<CR>
 map <Leader>p :bn<CR>
-map <Leader>q :bd<CR>
+map <Leader>q :close<CR>
+map <Leader>x :bd<CR>
 
 " Clears search highlight
 map <Leader>c :let @/ = ""<CR>:cclose<CR>
