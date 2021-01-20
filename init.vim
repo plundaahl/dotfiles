@@ -93,6 +93,10 @@ map <Leader>[ :bp<CR>
 " Refresh All Files
 map <Leader>r :bufdo e<CR>
 
+" On Save...
+" - Delete trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN CONFIG
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
