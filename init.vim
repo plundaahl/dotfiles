@@ -12,7 +12,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Intellisense
 Plug 'neoclide/coc.nvim'
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-python', 'coc-eslint', 'coc-go']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-python', 'coc-eslint']
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
