@@ -50,8 +50,8 @@ map <Leader><Tab>3 :call Indent(4)<CR>
 map <Leader><Tab>4 :call Indent(8)<CR>
 
 function! Indent(indent) abort
-  :exec 'set shiftwidth=' . a:indent
-  :exec 'set tabstop=' . a:indent
+  :exec 'setlocal shiftwidth=' . a:indent
+  :exec 'setlocal tabstop=' . a:indent
 endfunction
 
 
@@ -139,5 +139,7 @@ endfunction
 " FILE TYPE ASSOCIATIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead Jenkinsfile setf groovy
-au BufNewFile,BufRead *.tsx,*.jsx set syntax=typescript
-
+au BufNewFile,BufRead *.tsx,*.jsx setlocal syntax=typescript
+au BufNewFile,BufRead *.go
+  \ setlocal noexpandtab
+  \| :call Indent(4)
