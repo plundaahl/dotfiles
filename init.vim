@@ -121,13 +121,6 @@ inoremap <silent><expr> <Tab>
 xmap <leader>df <Plug>(coc-format-selected)
 nmap <leader>df <Plug>(coc-format-selected)
 
-" always show signcolumn
-if has("patch-8.1.1564")
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
 " NERDTree
 let NERDTreeQuitOnOpen = 1
 
