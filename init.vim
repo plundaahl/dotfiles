@@ -96,9 +96,13 @@ map <Leader>[ :bp<CR>
 " Refresh All Files
 map <Leader>r :bufdo e<CR>
 
+function! TrimTrailingWhitespace() abort
+  %s/\s\+$//e
+endfunction
+
 " On Save...
 " - Delete trailing whitespace
-autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * call TrimTrailingWhitespace()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN CONFIG
