@@ -33,31 +33,6 @@
       (file "~/org/!Tasks.org")
       "* TODO Meeting%?
 %t" :clock-in t :clock-resume t)
-     ("o" "Opp (Sales)" entry
-      (file "~/org/opps.org")
-      "* %^{opp name}
-*Message for Mark*
-Hi Mark,
-
-I'm trying to make sure I have context for %\\1 before I dive in and start working. Would you be able to help me fill in any of the following pieces of information?
-
-1. Who are the primary stakeholders? (AE, SC, anyone else involved)
-2. What communications channels are being used, and can I be invited to them?
-3. What is the timeline on upcoming demos?
-4. What existing environments, code, artifacts are there, if any?
-5. Is there any historical context that might be useful?
-
-Thanks!
-
-*Overview*
-
-*Communications*
-- Slack Channel
-- Box Notes
-
-** Stakeholders
-** Timeline
-** Environments, Code, Artifacts")
      ("d" "Decision" entry
       (file "~/org/decisions.org")
       "* %?
