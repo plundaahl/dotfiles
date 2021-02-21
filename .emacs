@@ -24,31 +24,6 @@
  '(org-agenda-todo-ignore-scheduled 0)
  '(org-agenda-todo-list-sublevels nil)
  '(org-agenda-window-setup 'reorganize-frame)
- '(org-capture-templates
-   '(("t" "Todo" entry
-      (file "~/org/!Tasks.org")
-      "* TODO %?
-%t" :prepend t)
-     ("m" "Meeting" entry
-      (file "~/org/!Tasks.org")
-      "* TODO Meeting%?
-%t" :clock-in t :clock-resume t)
-     ("d" "Decision" entry
-      (file "~/org/decisions.org")
-      "* %?
-*Date* %t (morning/afternoon/evening)
-
-*Mental/Physical State*
-
-*Problem Statement or Frame*
-
-*Variables that Govern the Situation*
-
-*Alternatives Considered and Reasons for Decision*
-
-*Range of Possible Outcomes*
-
-*Expected Outcomes, Reasoning, and Probabilities*")))
  '(org-enforce-todo-checkbox-dependencies t)
  '(org-enforce-todo-dependencies t)
  '(org-hide-emphasis-markers t)
