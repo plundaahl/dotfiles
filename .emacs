@@ -37,7 +37,6 @@
  '(org-plantuml-jar-path "~/plantuml.jar")
  '(org-return-follows-link t)
  '(org-roam-directory "~/org")
- '(org-roam-file-exclude-regexp "/\\!.+\\.org/")
  '(org-roam-title-sources '((title alias headline) alias))
  '(org-startup-truncated nil)
  '(org-startup-with-inline-images t)
