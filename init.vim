@@ -1,6 +1,5 @@
 " See colors at https://jonasjacek.github.io/colors/
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS (vim-plug)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -68,7 +67,9 @@ set cursorcolumn
 highlight CursorLine ctermbg=235 cterm=none
 highlight CursorColumn ctermbg=235 cterm=none
 
-
+" Pmenu (floating menus and things)
+highlight Pmenu ctermbg=235
+highlight Pmenu ctermfg=15
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " REMAPPINGS & BEHAVIOR
