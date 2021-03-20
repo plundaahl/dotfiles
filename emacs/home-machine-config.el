@@ -77,3 +77,6 @@
       (file+datetree "~/org/!Tasks.org")
       "* WEEKLY PLAN
 %?" :tree-type week :time-prompt t)))
+
+;; Refile item to task list
+(defun org-refile-to-tasklist () "" (interactive) (org-refile-to-weektree "~/org/!Tasks.org"))
