@@ -156,13 +156,21 @@ au BufNewFile,BufRead *.go
 if has("autocmd")
   " Drupal *.module and *.install files.
   augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.profile set filetype=php
-    autocmd BufRead,BufNewFile *.view set filetype=php
+    autocmd BufRead,BufNewFile *.module call SetPhpOptions()
+    autocmd BufRead,BufNewFile *.install call SetPhpOptions()
+    autocmd BufRead,BufNewFile *.test call SetPhpOptions()
+    autocmd BufRead,BufNewFile *.inc call SetPhpOptions()
+    autocmd BufRead,BufNewFile *.profile call SetPhpOptions()
+    autocmd BufRead,BufNewFile *.view call SetPhpOptions()
   augroup END
   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 endif
+
+function SetPhpOptions()
+  set filetype=php
+  :call Indent(2)
+endfunction
+
+autocmd BufRead,BufNewFile *.yml :call Indent(2)
+
 syntax on
