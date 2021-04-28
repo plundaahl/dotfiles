@@ -37,11 +37,12 @@ call plug#end()
 " APPEARANCE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" INDENTATION, TABS, RULERS, NUMBERS
+" INDENTATION, TABS, RULERS, NUMBERS, WRAP
 set smartindent
 set expandtab
 set ruler
 set number relativenumber
+set linebreak
 
 map <Leader><Tab>1 :call Indent(1)<CR>
 map <Leader><Tab>2 :call Indent(2)<CR>
