@@ -58,7 +58,6 @@
 ;;;;;;;;;;;
 (use-package undo-tree
   :ensure t
-  :pin melpa-stable
   :init
   (global-undo-tree-mode 1))
 
