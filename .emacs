@@ -90,6 +90,10 @@
   (setq org-image-actual-width nil)
   )
 
+(use-package ox-gfm
+  :defer 3
+  :after org)
+
 (use-package helm
   :ensure t
   :pin melpa-stable
