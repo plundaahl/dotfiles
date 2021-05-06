@@ -3,6 +3,7 @@
 (load "~/dotfiles/emacs/init-use-package.el")
 (load "~/dotfiles/emacs/org-archive-subtree.el")
 (load "~/dotfiles/emacs/refile-to-date-tree.el")
+(load "~/dotfiles/emacs/kill-other-buffers.el")
 
 (load-theme 'wombat t)
 
