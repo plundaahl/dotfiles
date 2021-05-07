@@ -90,6 +90,7 @@
   (setq org-babel-js-function-wrapper
       "process.stdout.write(JSON.stringify(require('util').inspect(function(){\n%s\n}(), { maxArrayLength: null, maxStringLength: null, breakLength: Infinity, compact: true })))")
   (setq org-image-actual-width nil)
+  (setq org-id-link-to-org-use-id t)
   )
 
 (use-package ox-gfm
