@@ -72,7 +72,9 @@
 (use-package org
   :ensure t
   :pin melpa-stable
-  :bind (("C-c c" . org-capture))
+  :bind (("C-c c" . org-capture)
+	 ("C-c l" . org-store-link)
+	 ("C-c a" . org-agenda))
   :config
   (org-babel-do-load-languages
     'org-babel-load-languages
