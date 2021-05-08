@@ -44,7 +44,8 @@
  '(org-startup-with-inline-images t)
  '(org-stuck-projects '("+PROJECT/-DONE" ("TODO") nil "SCHEDULED<"))
  '(org-tags-exclude-from-inheritance '("PROJECT"))
- '(package-selected-packages '(auto-package-update org-roam use-package ob-http))
+ '(package-selected-packages
+   '(quelpa-use-package auto-package-update org-roam use-package ob-http))
  '(ring-bell-function 'flash-mode-line)
  '(visible-bell t))
 (custom-set-faces
@@ -63,6 +64,14 @@
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
+
+(use-package quelpa
+  :ensure t
+  :pin melpa-stable)
+
+(use-package quelpa-use-package
+  :ensure t
+  :after quelpa)
 
 (use-package undo-tree
   :ensure t
