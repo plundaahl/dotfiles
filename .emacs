@@ -156,6 +156,20 @@
           (("C-c n i" . org-roam-insert))
           (("C-c n I" . org-roam-insert-immediate))))
 
+(use-package org-super-links
+  :after org
+  :quelpa (org-super-links
+	   :fetcher github
+	   :upgrade t
+	   :repo "toshism/org-super-links")
+  :init
+  (unbind-key "C-c l" org-mode-map)
+  (global-unset-key (kbd "C-c C-l"))
+  :bind (("C-c s l" . org-super-links-store-link)
+	 ("C-c s C-l" . org-super-links-insert-link)
+	 ("C-c s s" . org-super-links-link))
+  )
+
 (use-package ob-async
   :ensure t
   :pin melpa-stable)
