@@ -108,6 +108,8 @@
   (setq org-image-actual-width nil)
   (setq org-id-link-to-org-use-id t)
   (setq org-startup-folded t)
+  :init
+  (require 'org-id)
   )
 
 (use-package ox-gfm
@@ -141,21 +143,6 @@
             (write-file . helm-read-file-name-handler-1)
             (write-region . helm-read-file-name-handler-1)
             (org-set-tags-command))))
-
-(use-package org-roam
-  :ensure t
-  :pin melpa-stable
-  :hook
-  (after-init . org-roam-mode)
-  :custom
-  (org-roam-directory "~/org")
-  :bind (:map org-roam-mode-map
-	  (("C-c n l" . org-roam)
-
-           ("C-c n g" . org-roam-graph))
-	  :map org-mode-map
-          (("C-c n i" . org-roam-insert))
-          (("C-c n I" . org-roam-insert-immediate))))
 
 (use-package org-super-links
   :after org
