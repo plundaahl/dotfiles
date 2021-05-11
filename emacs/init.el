@@ -2,6 +2,8 @@
 ((lambda ()
    (defun rel-file (file) (concat (file-name-directory load-file-name) file))
 
+   (toggle-debug-on-error)
+
    ;; ======== UTIL FUNCTIONALITY ========
    (load (rel-file "func/flash-mode-line.el"))
    (load (rel-file "func/init-use-package.el"))
