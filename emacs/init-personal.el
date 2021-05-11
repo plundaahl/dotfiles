@@ -1,14 +1,17 @@
 ;; -*- mode: elisp -*-
+;; Personal Configuration File
 
-(use-package geiser
-  :ensure t
-  :pin melpa-stable
-  :config
-  (setq geiser-active-implementations '(mit))
-  (setq geiser-mode-eval-last-sexp-to-buffer t)
-  (setq geiser-mode-eval-to-buffer-prefix "")
-  (setq geiser-mode-start-repl-p t))
-
+(let ((override-conf (lambda ()
+		       (org-babel-do-load-languages
+			'org-babel-load-languages
+			'((emacs-lisp . t)
+			  (http . t)
+			  (shell . t)
+			  (typescript . t)
+			  (js . t)
+			  (plantuml . t))))))
+  (load (rel-file "package-defs/org/base.el")))
+(load (rel-file "package-defs/geiser/base.el"))
 
 (setq org-agenda-files '("~/org/!Tasks.org" "~/org/Projects.org" "~/org/vault"))
 (setq org-capture-templates '(

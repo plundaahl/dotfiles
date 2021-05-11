@@ -14,12 +14,7 @@
  ;; If there is more than one, they won't work right.
  '(hl-line ((t (:extend t :background "#303030" :underline nil)))))
 
-
 ;; PACKAGES
 ;;;;;;;;;;;
-(let ((custom-conf-dir "~/dotfiles/emacs/"))
-  (load "~/dotfiles/emacs/starter-conf.el"))
-
-(if (file-exists-p "~/.emacs-per-machine.el")
-    (load "~/.emacs-per-machine.el"))
-
+(let ((custom-conf "init-personal.el"))
+  (load "~/dotfiles/emacs/init.el"))
