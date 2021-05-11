@@ -15,11 +15,12 @@
 
 (setq org-agenda-files '("~/org/!Tasks.org"
 			 "~/org/Projects.org"
+			 "~/org/Alignment.org"
 			 "~/org/vault"))
 
 (setq org-tag-alist '(;; UTILITIES
 		      ("IGNORE")
-		      
+
 		      ;; PILLARS
 		      ("admin" . "a")
 		      ("career" . "c")

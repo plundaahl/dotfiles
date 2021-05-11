@@ -23,6 +23,7 @@
    ;; Basic Editing & Navigation
    (load (rel-file "package-defs/undo-tree/base.el"))
    (load (rel-file "package-defs/helm/base.el"))
+   (load (rel-file "package-defs/visual-fill-column/base.el"))
     
    ;; Org Mode
    (load (rel-file "package-defs/org-super-links/base.el"))
@@ -76,6 +77,7 @@
 
    ;; MODES
    (global-visual-line-mode 1)
+   (global-visual-fill-column-mode 1)
    (transient-mark-mode 1)
 
    (if (file-exists-p "~/.emacs-per-machine.el")
