@@ -10,7 +10,7 @@
   (setq geiser-mode-start-repl-p t))
 
 
-(setq org-agenda-files '("~/org/!Tasks.org" "~/org/Projects.org"))
+(setq org-agenda-files '("~/org/!Tasks.org" "~/org/Projects.org" "~/org/vault"))
 (setq org-capture-templates '(
      ("i" "Inbox Item" entry
       (file "~/org/inbox.org")

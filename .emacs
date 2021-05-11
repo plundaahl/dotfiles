@@ -36,9 +36,9 @@
  '(org-startup-truncated nil)
  '(org-startup-with-inline-images t)
  '(org-stuck-projects '("+PROJECT/-DONE" ("TODO") nil "SCHEDULED<"))
- '(org-tags-exclude-from-inheritance '("PROJECT"))
+ '(org-tags-exclude-from-inheritance '("PROJECT" "IGNORE"))
  '(package-selected-packages
-   '(quelpa-use-package auto-package-update org-roam use-package ob-http))
+   '(ox-gfm quelpa-use-package auto-package-update org-roam use-package ob-http))
  '(visible-bell t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

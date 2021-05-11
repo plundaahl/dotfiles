@@ -1,121 +1,81 @@
 ;; -*- mode: elisp -*-
+;; Personal Configuration File
 
-(defun load-rel (file) (load (concat custom-conf-dir file)))
+((lambda ()
+    (defun rel-file (file) (concat (file-name-directory load-file-name) file))
 
-(load-rel "func/flash-mode-line.el")
-(load-rel "func/init-use-package.el")
-(load-rel "func/org-archive-subtree.el")
-(load-rel "func/refile-to-date-tree.el")
-(load-rel "func/kill-other-buffers.el")
-(load-rel "func/append-capture-template.el")
+    ;; UTIL FUNCTIONALITY
+    (load (rel-file "func/flash-mode-line.el"))
+    (load (rel-file "func/init-use-package.el"))
+    (load (rel-file "func/org-archive-subtree.el"))
+    (load (rel-file "func/refile-to-date-tree.el"))
+    (load (rel-file "func/kill-other-buffers.el"))
+    (load (rel-file "func/append-capture-template.el"))
 
-(load-theme 'wombat t)
+    (setq use-package-always-ensure t)
+    (load-theme 'wombat t)
 
-;; PACKAGE MANAGEMENT
-(use-package auto-package-update
-  :ensure t
-  :config
-  (setq auto-package-update-delete-old-versions t)
-  (setq auto-package-update-hide-results t)
-  (auto-package-update-maybe))
+    ;; PACKAGES
+    ;; Package Management
+    (load (rel-file "package-defs/auto-package-update/base.el"))
+    (load (rel-file "package-defs/quelpa/base.el"))
+    (load (rel-file "package-defs/quelpa-use-package/base.el"))
+    
+    ;; Basic Editing & Navigation
+    (load (rel-file "package-defs/undo-tree/base.el"))
+    (load (rel-file "package-defs/helm/base.el"))
+    
+    ;; Org Mode
+    (let ((override-conf (lambda ()
+			   (org-babel-do-load-languages
+			    'org-babel-load-languages
+			    '((emacs-lisp . t)
+			      (http . t)
+			      (shell . t)
+			      (typescript . t)
+			      (js . t)
+			      (plantuml . t))))))
+      (load (rel-file "package-defs/org/base.el")))
 
-(use-package quelpa
-  :ensure t
-  :pin melpa-stable)
+    (load (rel-file "package-defs/org-super-links/base.el"))
+    (load (rel-file "package-defs/ox-gfm/base.el"))
 
-(use-package quelpa-use-package
-  :ensure t
-  :after quelpa)
+    (load (rel-file "package-defs/ob-http/base.el"))
+    (load (rel-file "package-defs/ob-typescript/base.el"))
+    (load (rel-file "package-defs/ob-async/base.el"))))
 
-;; ESSENTIALS
-(use-package undo-tree
-  :ensure t
-  :init
-  (global-undo-tree-mode 1))
-
-(use-package helm
-  :ensure t
-  :pin melpa-stable
-  :init
-  (helm-mode 1)
-  :bind (("M-x" . helm-M-x)
-	 ("C-x C-b" . helm-buffers-list)
-	 ("C-x C-f" . helm-find-files)
-	 ("C-h a" . helm-apropos))
-  :config
-  (setq helm-completing-read-handlers-alist
-	  '((find-tag . helm-completing-read-default-find-tag)
-	    (xref-find-definitions . helm-completing-read-default-find-tag)
-	    (xref-find-references . helm-completing-read-default-find-tag)
-	    (ggtags-find-tag-dwim . helm-completing-read-default-find-tag)
-	    (tmm-menubar)
-	    (find-file)
-	    (execute-extended-command)
-	    (dired-do-rename . helm-read-file-name-handler-1)
-            (dired-do-copy . helm-read-file-name-handler-1)
-            (dired-do-symlink . helm-read-file-name-handler-1)
-            (dired-do-relsymlink . helm-read-file-name-handler-1)
-            (dired-do-hardlink . helm-read-file-name-handler-1)
-            (basic-save-buffer . helm-read-file-name-handler-1)
-            (write-file . helm-read-file-name-handler-1)
-            (write-region . helm-read-file-name-handler-1)
-            (org-set-tags-command))))
-
-;; ORG
-(use-package org
-  :ensure t
-  :pin melpa-stable
-  :bind (("C-c c" . org-capture)
-	 ("C-c l" . org-store-link)
-	 ("C-c a" . org-agenda))
-  :config
-  (org-babel-do-load-languages
-    'org-babel-load-languages
-    '(
-      (emacs-lisp . t)
-      (http . t)
-      (shell . t)
-      (typescript . t)
-      (js . t)
-      (plantuml . t)))
-  ;; Fix for ob-js
-  ;; Taken from https://gist.github.com/mrspeaker/c3b7b8d0b0b96b1a012d736b22d12b2e
-  (setq org-babel-js-function-wrapper
-      "process.stdout.write(JSON.stringify(require('util').inspect(function(){\n%s\n}(), { maxArrayLength: null, maxStringLength: null, breakLength: Infinity, compact: true })))")
-  (setq org-image-actual-width nil)
-  (setq org-id-link-to-org-use-id t)
-  (setq org-startup-folded t)
-  :init
-  (require 'org-id)
-  )
-
-(use-package org-super-links
-  :after org
-  :quelpa (org-super-links
-	   :fetcher github
-	   :upgrade t
-	   :repo "toshism/org-super-links")
-  :init
-  (unbind-key "C-c l" org-mode-map)
-  (global-unset-key (kbd "C-c C-l"))
-  :bind (("C-c s l" . org-super-links-store-link)
-	 ("C-c s C-l" . org-super-links-insert-link)
-	 ("C-c s s" . org-super-links-link))
-  )
-
-(use-package ox-gfm
-  :defer 3
-  :after org)
-
-;; BABEL
-(use-package ob-http
-  :ensure t
-  :pin melpa-stable)
-
-(use-package ob-typescript
-  :ensure t)
-
-(use-package ob-async
-  :ensure t
-  :pin melpa-stable)
-
+;; CONFIGURATION
+(lambda () (
+(setq column-number-mode t)
+(setq global-hl-line-mode t)
+(setq inhibit-startup-screen nil)
+(setq ns-alternate-modifier 'super)
+(setq ns-command-modifier 'meta)
+(setq org-adapt-indentation nil)
+(setq org-agenda-files '("~/org"))
+(setq org-agenda-restore-windows-after-quit t)
+(setq org-agenda-skip-archived-trees nil)
+(setq org-agenda-todo-ignore-scheduled 0)
+(setq org-agenda-todo-list-sublevels nil)
+(setq org-agenda-window-setup 'reorganize-frame)
+(setq org-enforce-todo-checkbox-dependencies t)
+(setq org-enforce-todo-dependencies t)
+(setq org-hide-emphasis-markers t)
+(setq org-link-frame-setup
+      '((vm . vm-visit-folder-other-frame)
+	(vm-imap . vm-visit-imap-folder-other-frame)
+	(gnus . org-gnus-no-new-news)
+	(file . find-file)
+	(wl . wl-other-frame)))
+(setq org-log-into-drawer t)
+(setq org-plantuml-jar-path "~/plantuml.jar")
+(setq org-return-follows-link t)
+(setq org-roam-directory "~/org")
+(setq org-roam-title-sources '((title alias headline) alias))
+(setq org-startup-truncated nil)
+(setq org-startup-with-inline-images t)
+(setq org-stuck-projects '("+PROJECT/-DONE" ("TODO") nil "SCHEDULED<"))
+(setq org-tags-exclude-from-inheritance '("PROJECT" "IGNORE"))
+(setq visible-bell t))
+(setq hl-line-face ((t (:extend t :background "#303030" :underline nil))))
+)
