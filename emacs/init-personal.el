@@ -17,6 +17,24 @@
 			 "~/org/Projects.org"
 			 "~/org/vault"))
 
+(setq org-tag-alist '(;; UTILITIES
+		      ("IGNORE")
+		      
+		      ;; PILLARS
+		      ("admin" . "a")
+		      ("career" . "c")
+		      ("exploration_expression" . "x")
+		      ("family" . "f")
+		      ("health" . "h")
+		      ("home" . "H")
+		      ("mental_dev" . "m")
+		      ("operations" . "o")
+		      ("perspective" . "p")
+		      ("product_dev" . "r")
+		      ("self_employment" . "e")
+		      ("skills" . "s")
+		      ))
+
 (setq org-capture-templates '(
      ("i" "Inbox Item" entry
       (file "~/org/inbox.org")
