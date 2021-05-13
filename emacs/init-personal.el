@@ -19,21 +19,20 @@
 			 "~/org/vault"))
 
 (setq org-tag-alist '(;; UTILITIES
-		      ("IGNORE")
-
+		      ("IGNORE" . ?i)
 		      ;; PILLARS
-		      ("admin" . "a")
-		      ("career" . "c")
-		      ("exploration_expression" . "x")
-		      ("family" . "f")
-		      ("health" . "h")
-		      ("home" . "H")
-		      ("mental_dev" . "m")
-		      ("operations" . "o")
-		      ("perspective" . "p")
-		      ("product_dev" . "r")
-		      ("self_employment" . "e")
-		      ("skills" . "s")
+		      ("admin")
+		      ("career")
+		      ("exploration_expression")
+		      ("family")
+		      ("health")
+		      ("home")
+		      ("mental_dev")
+		      ("operations")
+		      ("perspective")
+		      ("product_dev")
+		      ("self_employment")
+		      ("skills")
 		      ))
 
 (setq org-capture-templates '(
