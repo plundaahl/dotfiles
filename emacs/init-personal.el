@@ -1,18 +1,20 @@
 ;; -*- mode: elisp -*-
 ;; Personal Configuration File
 
-(let ((override-conf (lambda ()
-		       (org-babel-do-load-languages
+(load (rel-file "package-defs/geiser/base.el"))
+(load (rel-file "package-defs/geiser-mit/base.el"))
+(let ((override-config (defun override-config ()
+ 		       (org-babel-do-load-languages
 			'org-babel-load-languages
 			'((emacs-lisp . t)
 			  (http . t)
 			  (shell . t)
 			  (typescript . t)
+  			  (scheme . t)
 			  (js . t)
 			  (plantuml . t))))))
   (load (rel-file "package-defs/org/base.el")))
 (load (rel-file "package-defs/org-super-links/base.el"))
-(load (rel-file "package-defs/geiser/base.el"))
 (load (rel-file "package-defs/sicp/base.el"))
 
 (setq org-agenda-files '("~/org/!Tasks.org"

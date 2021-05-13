@@ -15,7 +15,7 @@
   (setq org-startup-folded t)
 
   ;; load custom configs if present
-  (if (boundp 'override-config) (override-config))
+  (if (boundp 'override-config) (override-config) (message "ORG: No override-config found"))
   :init
   (require 'org-id)
   )
