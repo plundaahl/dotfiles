@@ -13,6 +13,7 @@
   (load (rel-file "package-defs/org/base.el")))
 (load (rel-file "package-defs/org-super-links/base.el"))
 (load (rel-file "package-defs/geiser/base.el"))
+(load (rel-file "package-defs/sicp/base.el"))
 
 (setq org-agenda-files '("~/org/!Tasks.org"
 			 "~/org/Projects.org"
