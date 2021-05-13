@@ -19,14 +19,13 @@
    (load (rel-file "package-defs/auto-package-update/base.el"))
    (load (rel-file "package-defs/quelpa/base.el"))
    (load (rel-file "package-defs/quelpa-use-package/base.el"))
-    
+
    ;; Basic Editing & Navigation
    (load (rel-file "package-defs/undo-tree/base.el"))
    (load (rel-file "package-defs/helm/base.el"))
    (load (rel-file "package-defs/visual-fill-column/base.el"))
-    
+
    ;; Org Mode
-   (load (rel-file "package-defs/org-super-links/base.el"))
    (load (rel-file "package-defs/ox-gfm/base.el"))
 
    (load (rel-file "package-defs/ob-http/base.el"))
