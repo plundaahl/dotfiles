@@ -13,8 +13,6 @@
 			  (plantuml . t))))))
   (load (rel-file "package-defs/org/base.el")))
 
-(set-face-attribute 'default nil :height 150)
-
 (setq org-tags-exclude-from-inheritance '("PROJECT" "1_1_Mark" "MEETING"))
 
 (setq org-capture-templates '(
