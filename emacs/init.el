@@ -16,9 +16,9 @@
 
    ;; ======== PACKAGES ========
    ;; Package Management
-   (load (rel-file "package-defs/auto-package-update/base.el"))
    (load (rel-file "package-defs/quelpa/base.el"))
    (load (rel-file "package-defs/quelpa-use-package/base.el"))
+   (load (rel-file "package-defs/auto-package-update/base.el"))
 
    ;; Basic Editing & Navigation
    (load (rel-file "package-defs/undo-tree/base.el"))
