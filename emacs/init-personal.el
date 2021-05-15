@@ -38,22 +38,23 @@
 	      (org-agenda-hide-tags-regexp "\\|*"))))
       nil)))
 
-(setq org-tag-alist '(;; UTILITIES
-		      ("IGNORE" . ?i)
-		      ;; PILLARS
-		      ("admin")
-		      ("career")
-		      ("exploration_expression")
-		      ("family")
-		      ("health")
-		      ("home")
-		      ("mental_dev")
-		      ("operations")
-		      ("perspective")
-		      ("product_dev")
-		      ("self_employment")
-		      ("skills")
-		      ))
+(setq org-tag-persistent-alist '(;; UTILITIES
+				 ("IGNORE" . ?I)
+				 ("ROUTINE" . ?R)
+				 ;; PILLARS
+				 ("admin")
+				 ("career")
+				 ("exploration_expression")
+				 ("family")
+				 ("health")
+				 ("home")
+				 ("mental_dev")
+				 ("operations")
+				 ("perspective")
+				 ("product_dev")
+				 ("self_employment")
+				 ("skills")
+				 ))
 
 (setq org-capture-templates '(
      ("i" "Inbox Item" entry
