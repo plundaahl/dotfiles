@@ -18,6 +18,7 @@
 (load (rel-file "package-defs/sicp/base.el"))
 
 (setq org-agenda-files '("~/org/!Tasks.org"
+			 "~/org/inbox.org"
 			 "~/org/Alignment.org"
 			 "~/org/projects"
 			 "~/org/vault"))
