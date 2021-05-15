@@ -18,9 +18,24 @@
 (load (rel-file "package-defs/sicp/base.el"))
 
 (setq org-agenda-files '("~/org/!Tasks.org"
-			 "~/org/Projects.org"
 			 "~/org/Alignment.org"
+			 "~/org/projects"
 			 "~/org/vault"))
+
+(setq org-priority-lowest ?F)
+(setq org-priority-default ?F)
+
+(setq org-agenda-custom-commands
+   '(("d" "Daily Action View"
+      ((agenda ""
+	       ((org-agenda-overriding-header "Agenda")
+		(org-agenda-span 1)
+		(org-agenda-hide-tags-regexp "\\|*")))
+       (tags "+SCHEDULED>\"<-1d>\"+SCHEDULED<\"<+1d>\"+REMINDER-TODO=\"DONE\""
+	     ((org-agenda-overriding-header "Reminders & Events")
+	      (org-agenda-prefix-format "- ")
+	      (org-agenda-hide-tags-regexp "\\|*"))))
+      nil)))
 
 (setq org-tag-alist '(;; UTILITIES
 		      ("IGNORE" . ?i)
