@@ -1,0 +1,16 @@
+** %?
+:PROPERTIES:
+:CATEGORY: 
+:END:
+
+*** Overview
+*In Service of Goals*
+
+*Context*
+
+*Objectives*
+
+*** Log
+*** Tasks
+*** Reminders
+*** Artifacts

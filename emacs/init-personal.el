@@ -99,7 +99,12 @@
       (file+datetree "~/org/!Tasks.org")
       (file "~/dotfiles/emacs/capture-templates/personal/plan-weekly.org")
       :tree-type week
-      :time-prompt t)))
+      :time-prompt t)
+
+     ("P" "Project" entry
+      (file+headline "~/org/Alignment.org" "Projects")
+      (file "~/dotfiles/emacs/capture-templates/personal/project.org"))
+     ))
 
 ;; Refile item to task list
 (defun org-refile-to-tasklist () "" (interactive) (org-refile-to-weektree "~/org/!Tasks.org"))
