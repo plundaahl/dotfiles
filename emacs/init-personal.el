@@ -36,6 +36,18 @@
 	     ((org-agenda-overriding-header "Reminders & Events")
 	      (org-agenda-prefix-format "- ")
 	      (org-agenda-hide-tags-regexp "\\|*"))))
+      ("p" . "Planning Views")
+      ("pw" "Weekly Planning"
+       ((agenda ""
+		((org-agenda-span 'week)
+		 (org-agenda-start-day "+3")
+		 (org-agenda-prefix-format " %i %-12:c% s")))
+	(tags "+ACTIVE+TODO=\"NEXT\"-SCHEDULED={.}-ROUTINE"
+	      ((org-agenda-overriding-header "Next Tasks"))))
+       ((org-agenda-tag-filter-preset
+	 '("-ROUTINE"))
+	(org-agenda-hide-tags-regexp "\\|*"))
+      nil)
       nil)))
 
 (setq org-tag-persistent-alist '(;; UTILITIES
