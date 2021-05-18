@@ -52,6 +52,7 @@
 (setq org-tag-persistent-alist '(;; UTILITIES
 				 ("IGNORE" . ?I)
 				 ("ROUTINE" . ?R)
+				 ("REMINDER" . ?r)
 				 ;; PILLARS
 				 ("admin")
 				 ("career")
