@@ -73,12 +73,22 @@
       (file "~/dotfiles/emacs/capture-templates/inbox-item.org"))
 
      ("t" "Todo" entry
-      (file+datetree "~/org/!Tasks.org")
-      "** TODO %?" :tree-type week :time-prompt t)
+      (file "~/org/inbox_tasks.org")
+      "** TODO %?
+:PROPERTIES:
+:CREATED: %U
+:END:"
+      :kill-buffer 1
+      :empty-lines-after 1)
 
      ("n" "Note" entry
-      (file+datetree "~/org/!Tasks.org")
-      "** %?" :tree-type week :time-prompt t)
+      (file "~/org/inbox_notes.org")
+      "* %?
+:PROPERTIES:
+:CREATED: %U
+:END:"
+      :kill-buffer 1
+      :empty-lines-after 1)
 
      ("q" "Question" entry
       (file+datetree "~/org/!Tasks.org")
