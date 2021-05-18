@@ -15,6 +15,10 @@
 
 (setq org-tags-exclude-from-inheritance '("PROJECT" "1_1_Mark" "MEETING"))
 
+(setq org-agenda-files '("~/org"
+			 "~/org/areas"
+			 "~/org/projects"))
+
 (setq org-capture-templates '(
      ("t" "Todo" entry
       (file+datetree "~/org/!Tasks.org")
