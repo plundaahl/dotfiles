@@ -3,21 +3,24 @@
 
 *Declutter*
 - [ ] Clean desk
-- [ ] Capture and sort anything you haven't gotten to (browser tabs, papers, etc.)
-- [ ] Process inbox
-- [ ] Write down anything that's on your mind (under a misc. thoughts section)
+- [ ] Capture tabs
+- [ ] Capture and set next tasks in active [[id:3806a294-971c-4591-ad31-5628cb751441][Projects]]
+- [ ] Capture anything on your mind
+
+*Refile*
+- [ ] Process [[https://mail.protonmail.com][Email]]
+- [ ] Process Calendar (2 weeks back, 4 weeks forward)
+- [ ] Process Downloads
+- [ ] Process [[file:~/org/inbox_notes.org][Notes]]
+- [ ] Process [[file:~/org/inbox_tasks.org][Tasks]]
 
 *Get Current*
-- [ ] Review last week's tasks
-- [ ] Reflect on last week
-- [ ] Review upcoming tasks and deadlines
-- [ ] Review projects and assign next-steps
-- [ ] Roughly plan upcoming week
+- [ ] Prioritize tasks
+- [ ] Schedule week
 
-*Get Creative*
+*Reflect*
+- [ ] Reflect on last week (summarize in main headline)
 - [ ] Review someday list
 - [ ] Dream
 
-*** Misc Thoughts
-*** Weekly Reflections
 *** Dreams and Ideas
