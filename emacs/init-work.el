@@ -17,16 +17,19 @@
 
 (setq org-agenda-files '("~/org"
 			 "~/org/areas"
+			 "~/org/vault"
 			 "~/org/projects"))
 
 (setq org-capture-templates '(
      ("t" "Todo" entry
-      (file+datetree "~/org/!Tasks.org")
+      (file+headline "~/org/inbox.org" "Tasks")
        "* TODO %?
-SCHEDULED: %t"
-       :tree-type week
-       :empty-lines 1
-       :kill-buffer
+SCHEDULED: %t
+:PROPERTIES:
+:CREATED: %U
+:END:"
+       :empty-lines-after 1
+       :kill-buffer 1
        :time-prompt t)
 
      ("n" "Note" entry
@@ -38,6 +41,13 @@ SCHEDULED: %t"
        :empty-lines-after 1
        :time-prompt t)
 
+     ("w" "Weekly Review" entry
+      (file+headline "~/org/reviews.org" "Weekly")
+      (file "~/dotfiles/emacs/capture-templates/work/review-weekly.org")
+      :empty-lines-after 1
+      :jump-to-captured 1
+      :time-prompt t)
+     
      ("m" "Meeting" entry
       (file+datetree "~/org/!Tasks.org")
        "* TODO Meeting: %? %u :MEETING:
