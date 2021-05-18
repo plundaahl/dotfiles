@@ -22,13 +22,16 @@
 SCHEDULED: %t"
        :tree-type week
        :empty-lines 1
+       :kill-buffer
        :time-prompt t)
 
      ("n" "Note" entry
-      (file+datetree "~/org/!Tasks.org")
-       "* %?"
-       :tree-type week
-       :empty-lines 1
+      (file+headline "~/org/inbox.org" "Notes")
+       "** %?
+:PROPERTIES:
+:CREATED: %U
+:END:"
+       :empty-lines-after 1
        :time-prompt t)
 
      ("m" "Meeting" entry
