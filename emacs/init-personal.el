@@ -28,7 +28,7 @@
 
 (setq org-log-done "time")
 
-(setq org-todo-keywords '((sequence "TODO" "BLOCKED" "|" "DONE(d!)" "CANCELLED(c!)")))
+(setq org-todo-keywords '((sequence "TODO" "BLOCKED(b@)" "|" "DONE(d!)" "CANCELLED(c!)")))
 
 (setq org-agenda-custom-commands
    '(("d" "Daily Action View"
