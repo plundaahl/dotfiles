@@ -78,10 +78,6 @@
 				 ))
 
 (setq org-capture-templates '(
-     ("i" "Inbox Item" entry
-      (file "~/org/inbox.org")
-      (file "~/dotfiles/emacs/capture-templates/inbox-item.org"))
-
      ("t" "Todo" entry
       (file "~/org/inbox_tasks.org")
       "** TODO %?
