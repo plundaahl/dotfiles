@@ -36,6 +36,8 @@
 	       ((org-agenda-overriding-header "Agenda")
 		(org-agenda-span 1)
 		(org-agenda-skip-scheduled-if-done t)
+		(org-agenda-skip-function
+		 '(org-agenda-skip-entry-if 'regexp ":REMINDER:"))
 		(org-agenda-hide-tags-regexp "\\|*")))
        (tags "+SCHEDULED>\"<-1d>\"+SCHEDULED<\"<+1d>\"+REMINDER-TODO=\"DONE\"-TODO=\"CANCELLED\""
 	     ((org-agenda-overriding-header "Reminders & Events")
