@@ -1,0 +1,18 @@
+** Weekly Review %?
+:PROPERTIES:
+:CREATED: %U
+:END:
+
+*Capture*
+- [ ] capture notes and ideas
+
+*Refile*
+- [ ] Process Email
+- [ ] Process Calendar (2 weeks back, 4 weeks forward)
+- [ ] Process Downloads
+- [ ] Process [[id:6cd31345-fe6d-46e8-9051-8e1eb12af000][Notes]]
+- [ ] Process [[id:23c3ac80-b9a4-443a-ad1a-0e79bb974f8f][Tasks]]
+
+*Plan*
+- [ ] Prioritize Tasks
+- [ ] Schedule Week
