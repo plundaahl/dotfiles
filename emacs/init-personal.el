@@ -96,10 +96,6 @@
       :kill-buffer 1
       :empty-lines-after 1)
 
-     ("q" "Question" entry
-      (file+datetree "~/org/!Tasks.org")
-      "** QUESTION %?" :tree-type week :time-prompt t)
-
      ("d" "Decision" entry
       (file "~/org/decisions.org")
       (file "~/dotfiles/emacs/capture-templates/decision.org"))
