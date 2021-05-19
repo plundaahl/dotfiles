@@ -26,29 +26,37 @@
 (setq org-priority-lowest ?F)
 (setq org-priority-default ?F)
 
+(setq org-log-done "time")
+
+(setq org-todo-keywords '((sequence "TODO" "BLOCKED" "|" "DONE(d!)" "CANCELLED(c!)")))
+
 (setq org-agenda-custom-commands
    '(("d" "Daily Action View"
       ((agenda ""
 	       ((org-agenda-overriding-header "Agenda")
 		(org-agenda-span 1)
+		(org-agenda-skip-scheduled-if-done t)
 		(org-agenda-hide-tags-regexp "\\|*")))
-       (tags "+SCHEDULED>\"<-1d>\"+SCHEDULED<\"<+1d>\"+REMINDER-TODO=\"DONE\""
+       (tags "+SCHEDULED>\"<-1d>\"+SCHEDULED<\"<+1d>\"+REMINDER-TODO=\"DONE\"-TODO=\"CANCELLED\""
 	     ((org-agenda-overriding-header "Reminders & Events")
 	      (org-agenda-prefix-format "- ")
-	      (org-agenda-hide-tags-regexp "\\|*"))))
-      ("p" . "Planning Views")
-      ("pw" "Weekly Planning"
+	      (org-agenda-hide-tags-regexp "\\|*")))
+       (tags "+CLOSED>\"<-1d>\""
+	     ((org-agenda-overriding-header "Complete")))))
+
+     ("p" . "Planning Views")
+
+     ("pw" "Weekly Planning"
        ((agenda ""
 		((org-agenda-span 'week)
 		 (org-agenda-start-day "+3")
+		 (org-agenda-skip-scheduled-if-done t)
 		 (org-agenda-prefix-format " %i %-12:c% s")))
 	(tags "+ACTIVE+TODO=\"NEXT\"-SCHEDULED={.}-ROUTINE"
 	      ((org-agenda-overriding-header "Next Tasks"))))
-       ((org-agenda-tag-filter-preset
-	 '("-ROUTINE"))
-	(org-agenda-hide-tags-regexp "\\|*"))
-      nil)
-      nil)))
+       ((org-agenda-tag-filter-preset '("-ROUTINE"))
+	(org-agenda-hide-tags-regexp "\\|*")))
+      ))
 
 (setq org-tag-persistent-alist '(;; UTILITIES
 				 ("IGNORE" . ?I)
