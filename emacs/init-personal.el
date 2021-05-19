@@ -101,7 +101,7 @@
       (file "~/dotfiles/emacs/capture-templates/decision.org"))
 
      ("r" "Weekly Review" entry
-      (file+datetree "~/org/!Tasks.org")
+      (file+headline "~/org/Reviews.org" "Weeks")
       (file "~/dotfiles/emacs/capture-templates/personal/review-weekly.org")
       :tree-type week
       :time-prompt t)
