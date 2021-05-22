@@ -20,6 +20,20 @@
 			 "~/org/vault"
 			 "~/org/projects"))
 
+(setq org-tag-persistent-alist '(
+				 ("Index" . ?i)
+				 ("Note" . ?n)
+				 ("Tool" . ?t)
+				 ("Concept" . ?c)
+				 (:startgrouptag)
+				 ("Reference" . ?R)
+				 ("Article" . ?A)
+				 ("Video" . ?V)
+				 (:endgrouptag)
+				 ("Appointment" . ?a)
+				 ("Metric" . ?m)
+				 ))
+
 (setq org-agenda-custom-commands
    '(("d" "Daily Action View"
       ((agenda ""
