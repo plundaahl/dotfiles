@@ -21,6 +21,7 @@
 			 "~/org/inbox_notes.org"
 			 "~/org/inbox_tasks.org"
 			 "~/org/Alignment.org"
+			 "~/org/!Reflections.org"
 			 "~/org/vault"))
 
 (setq org-priority-lowest ?F)
@@ -92,6 +93,11 @@
       :kill-buffer 1
       :empty-lines-after 1)
 
+     ("f" "Reflection" entry
+      (file "~/org/!Reflections.org")
+      "* %?"
+      :empty-lines-after 1)
+
      ("d" "Decision" entry
       (file "~/org/decisions.org")
       (file "~/dotfiles/emacs/capture-templates/decision.org"))
@@ -99,7 +105,8 @@
      ("r" "Weekly Review" entry
       (file+headline "~/org/Reviews.org" "Weeks")
       (file "~/dotfiles/emacs/capture-templates/personal/review-weekly.org")
-      :tree-type week
+      :immediate-finish t
+      :jump-to-captured t
       :time-prompt t)
 
      ("p" "Weekly Plan" entry

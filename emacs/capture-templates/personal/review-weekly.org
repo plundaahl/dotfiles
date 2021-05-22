@@ -1,26 +1,18 @@
-** Weekly Review w%?
-*** Checklist
+** Weekly Review w%? -
 
-*Declutter*
-- [ ] Clean desk
-- [ ] Capture tabs
-- [ ] Capture and set next tasks in active [[id:3806a294-971c-4591-ad31-5628cb751441][Projects]]
-- [ ] Capture anything on your mind
+*Reflect*
+- [ ] [[id:0b9e8ce6-1ec9-4806-9eb5-e041f9037795][Review Values & Principles]]
+- [ ] Pick a Phrase for the Week
+- [ ] [[elisp:(pcl/org-agenda-weekly-review (org-entry-get nil "CREATED"))][Reflect]] on the Week
 
 *Refile*
+- [ ] Process Tabs on phone
 - [ ] Process [[https://mail.protonmail.com][Email]]
-- [ ] Process Calendar (2 weeks back, 4 weeks forward)
+- [ ] Process Calendar ([[elisp:(org-agenda nil "a")][Agenda]], [[https://calendar.google.com/calendar/u/0/r][Google]] - 2 weeks back, 4 weeks forward)
 - [ ] Process Downloads
 - [ ] Process [[file:~/org/inbox_notes.org][Notes]]
 - [ ] Process [[file:~/org/inbox_tasks.org][Tasks]]
 
-*Get Current*
-- [ ] Prioritize tasks
-- [ ] Schedule week
-
-*Reflect*
-- [ ] Reflect on last week (summarize in main headline)
-- [ ] Review someday list
-- [ ] Dream
-
-*** Dreams and Ideas
+*Plan*
+- [ ] [[elisp:(pcl/org-agenda-active-projects)][Update Projects]]
+- [ ] [[elisp:(org-agenda nil "pw")][Schedule week]]
