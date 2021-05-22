@@ -1,7 +1,4 @@
 ** Weekly Review %?
-:PROPERTIES:
-:CREATED: %U
-:END:
 
 *Capture*
 - [ ] capture notes and ideas

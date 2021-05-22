@@ -54,20 +54,14 @@
      ("t" "Todo" entry
       (file+headline "~/org/inbox.org" "Tasks")
        "* TODO %?
-SCHEDULED: %t
-:PROPERTIES:
-:CREATED: %U
-:END:"
+SCHEDULED: %t"
        :empty-lines-after 1
        :kill-buffer 1
        :time-prompt t)
 
      ("n" "Note" entry
       (file+headline "~/org/inbox.org" "Notes")
-       "** %?
-:PROPERTIES:
-:CREATED: %U
-:END:"
+       "** %?"
        :empty-lines-after 1
        :time-prompt t)
 
@@ -77,7 +71,7 @@ SCHEDULED: %t
       :empty-lines-after 1
       :jump-to-captured 1
       :time-prompt t)
-     
+
      ("m" "Meeting" entry
       (file+datetree "~/org/!Tasks.org")
        "* TODO Meeting: %? %u :MEETING:

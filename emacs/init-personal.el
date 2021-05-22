@@ -82,19 +82,13 @@
 (setq org-capture-templates '(
      ("t" "Todo" entry
       (file "~/org/inbox_tasks.org")
-      "** TODO %?
-:PROPERTIES:
-:CREATED: %U
-:END:"
+      "** TODO %?"
       :kill-buffer 1
       :empty-lines-after 1)
 
      ("n" "Note" entry
       (file "~/org/inbox_notes.org")
-      "* %?
-:PROPERTIES:
-:CREATED: %U
-:END:"
+      "* %?"
       :kill-buffer 1
       :empty-lines-after 1)
 
