@@ -31,6 +31,7 @@
    (load (rel-file "package-defs/ob-http/base.el"))
    (load (rel-file "package-defs/ob-typescript/base.el"))
    (load (rel-file "package-defs/ob-async/base.el"))
+   (load (rel-file "package-defs/org-ql/base.el"))
 
    ;; ======== PACKAGES ========
    (setq column-number-mode t)
