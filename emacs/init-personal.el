@@ -20,6 +20,7 @@
 (setq org-agenda-files '("~/org/!Tasks.org"
 			 "~/org/inbox_notes.org"
 			 "~/org/inbox_tasks.org"
+			 "~/org/Contacts.org"
 			 "~/org/Alignment.org"
 			 "~/org/!Reflections.org"
 			 "~/org/vault"))
