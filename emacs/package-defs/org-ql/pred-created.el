@@ -23,8 +23,8 @@ Parses OBJ to ts if OBJ is a string"
 	  (let ((heading-time (pcl/as-ts (org-entry-get (point) "CREATED")))
 		(on (pcl/as-ts on))
 		(from (pcl/as-ts (or on from)))
-		(to (ts-adjust 'day +1 (pcl/as-ts (or on to)))))
+		(to (pcl/as-ts (or on to))))
 	      (and t
 		   (if from (ts<= from heading-time) t)
-		   (if to (ts< heading-time to) t)
+		   (if to (ts< heading-time (ts-adjust 'day +1 to)) t)
 		   ))))
