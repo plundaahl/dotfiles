@@ -16,6 +16,7 @@
   (load (rel-file "package-defs/org/base.el")))
 (load (rel-file "package-defs/org-super-links/base.el"))
 (load (rel-file "package-defs/sicp/base.el"))
+(load (rel-file "func/org-metrics.el"))
 
 (setq org-agenda-files '("~/org/!Tasks.org"
 			 "~/org/inbox_notes.org"
