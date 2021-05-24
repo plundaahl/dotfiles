@@ -14,7 +14,7 @@ Parses OBJ to ts if OBJ is a string"
     (ts-fill (ts-dec 'day (ts-dow (ts-dec 'day 1 time)) time))))
 
 (defun pcl/ts-week-end (time)
-  (pcl/ts-this-week (ts-inc 'day 6 (pcl/as-ts time))))
+  (pcl/ts-week-start (ts-inc 'day 6 (pcl/as-ts time))))
 
 (org-ql--defpred created (&key from to on)
   "Search for entries with \"CREATED\" property in range or on date"
