@@ -1,0 +1,12 @@
+* %?
+:PROPERTIES:
+:Email:
+:Phone:
+:Facebook:
+:Linkedin:
+:END:
+
+** Notes
+** Associations
+** Reminders
+** Log

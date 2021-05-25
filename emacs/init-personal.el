@@ -120,6 +120,14 @@
      ("P" "Project" entry
       (file+headline "~/org/Alignment.org" "Projects")
       (file "~/dotfiles/emacs/capture-templates/personal/project.org"))
+
+     ("c" "Contact")
+     ("cp" "Person" entry
+      (file+headline "~/org/Contacts.org" "People")
+      (file "~/dotfiles/emacs/capture-templates/personal/contact-person.org"))
+     ("cc" "Company" entry
+      (file+headline "~/org/Contacts.org" "Companies")
+      (file "~/dotfiles/emacs/capture-templates/personal/contact-company.org"))
      ))
 
 ;; Refile item to task list

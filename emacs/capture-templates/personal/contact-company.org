@@ -1,0 +1,11 @@
+* %?
+:PROPERTIES:
+:Industry:
+:Size:
+:Website:
+:END:
+
+** Notes
+** Associations
+** Reminders
+** Log
