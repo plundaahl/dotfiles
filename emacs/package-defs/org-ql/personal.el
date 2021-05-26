@@ -2,4 +2,6 @@
 
 (use-package org-ql
   :pin melpa-stable
-  :after (org))
+  :after (org)
+  :config
+  (load (rel-file "pred-created.el")))
