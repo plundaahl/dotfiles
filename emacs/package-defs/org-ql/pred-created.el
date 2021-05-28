@@ -16,7 +16,7 @@ Parses OBJ to ts if OBJ is a string"
 (defun pcl/ts-week-end (time)
   (pcl/ts-week-start (ts-inc 'day 6 (pcl/as-ts time))))
 
-(org-ql--defpred created (&key from to on)
+(org-ql-defpred created (&key from to on)
   "Search for entries with \"CREATED\" property in range or on date"
   :body (if (and on (or from to))
 	    (error "Either specify FROM and/or TO, or ON")
