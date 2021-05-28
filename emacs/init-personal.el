@@ -50,9 +50,9 @@
        (tags "+CLOSED>\"<-1d>\""
 	     ((org-agenda-overriding-header "Complete")))))
 
-     ("p" . "Planning Views")
+     ("p" . "Plan...")
 
-     ("pw" "Weekly Planning"
+     ("pw" "Plan Week"
        ((agenda ""
 		((org-agenda-span 'week)
 		 (org-agenda-start-day "+3")
@@ -62,7 +62,18 @@
 	      ((org-agenda-overriding-header "Next Tasks"))))
        ((org-agenda-tag-filter-preset '("-ROUTINE"))
 	(org-agenda-hide-tags-regexp "\\|*")))
-      ))
+
+     ("v" . "View...")
+
+     ("vp" "View Projects"
+      ((tags "+PROJECT+ACTIVE"
+	     ((org-agenda-overriding-header "Projects (Active)")))
+       (tags "+PROJECT-ACTIVE"
+	     ((org-agenda-overriding-header "Projects (Inactive)")))
+       )
+      ((org-agenda-hide-tags-regexp "\\|*")
+       (org-agenda-prefix-format " ")))
+     ))
 
 (setq org-tag-persistent-alist '(;; UTILITIES
 				 ("IGNORE" . ?I)
