@@ -88,7 +88,8 @@
 
 (setq org-agenda-custom-commands
       '(
-	("d" "Daily Action View"
+	("d" . "Dashboards")
+	("dd" "Daily Action"
 	 ((agenda ""
 		  ((org-agenda-overriding-header "Agenda")
 		   (org-agenda-span 1)
@@ -103,6 +104,22 @@
 	  (tags "+CLOSED>\"<-1d>\""
 		((org-agenda-overriding-header "Complete")))))
 
+	("dp" "Projects"
+	 ((tags "+PROJECT+ACTIVE"
+		((org-agenda-overriding-header "Projects (Active)")))
+	  (tags "+PROJECT-ACTIVE"
+		((org-agenda-overriding-header "Projects (Inactive)")))
+	  )
+	 ((org-agenda-hide-tags-regexp "\\|*")
+	  (org-agenda-prefix-format " ")))
+
+	("dg" "Goals"
+	 ((tags "+GOAL"
+		((org-agenda-overriding-header "Goals")))
+	  )
+	 ((org-agenda-hide-tags-regexp "\\|*")
+	  (org-agenda-prefix-format " ")))
+	
 	("p" . "Plan...")
 
 	("pw" "Plan Week"
@@ -115,17 +132,6 @@
 		((org-agenda-overriding-header "Next Tasks"))))
 	 ((org-agenda-tag-filter-preset '("-ROUTINE"))
 	  (org-agenda-hide-tags-regexp "\\|*")))
-
-	("v" . "View...")
-
-	("vp" "View Projects"
-	 ((tags "+PROJECT+ACTIVE"
-		((org-agenda-overriding-header "Projects (Active)")))
-	  (tags "+PROJECT-ACTIVE"
-		((org-agenda-overriding-header "Projects (Inactive)")))
-	  )
-	 ((org-agenda-hide-tags-regexp "\\|*")
-	  (org-agenda-prefix-format " ")))
 	))
 
 (setq org-capture-templates
