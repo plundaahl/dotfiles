@@ -62,7 +62,6 @@
    (setq org-startup-truncated nil)
    (setq org-startup-with-inline-images t)
    (setq org-stuck-projects '("+PROJECT/-DONE" ("TODO") nil "SCHEDULED<"))
-   (setq org-tags-exclude-from-inheritance '("PROJECT" "IGNORE"))
    (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
 	 backup-by-copying t    ; Don't delink hardlinks
 	 version-control t      ; Use version numbers on backups

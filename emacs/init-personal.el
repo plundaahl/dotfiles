@@ -79,6 +79,11 @@
 				 ("IGNORE" . ?I)
 				 ("ROUTINE" . ?R)
 				 ("REMINDER" . ?r)
+				 ;; ALIGNMENT HIERARCHY
+				 (:startgroup)
+				 ("GOAL")
+				 ("PROJECT")
+				 (:endgroup)
 				 ;; PILLARS
 				 ("admin")
 				 ("career")
@@ -93,6 +98,13 @@
 				 ("self_employment")
 				 ("skills")
 				 ))
+
+(setq org-tags-exclude-from-inheritance '(;; UTILITIES
+					  "IGNORE"
+					  ;; ALIGNMENT HIERARCHY
+					  "GOAL"
+					  "PROJECT"
+					  ))
 
 (setq org-capture-templates '(
      ("t" "Todo" entry

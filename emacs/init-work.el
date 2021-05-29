@@ -35,6 +35,11 @@
 				 ("Metric" . ?m)
 				 ))
 
+(setq org-tags-exclude-from-inheritance '(
+					  "PROJECT"
+					  "IGNORE"
+					  ))
+
 (setq org-agenda-custom-commands
    '(("d" "Daily Action View"
       ((agenda ""
