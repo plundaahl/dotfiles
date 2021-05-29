@@ -105,18 +105,18 @@
 		((org-agenda-overriding-header "Complete")))))
 
 	("dp" "Projects"
-	 ((tags "+PROJECT+TODO=\"ACTIVE\""
+	 ((tags "+PROJECT+ACTIVE"
 		((org-agenda-overriding-header "Projects (Active)")))
-	  (tags "+PROJECT-TODO=\"ACTIVE\"-TODO=\"COMPLETE\"-TODO=\"ABANDONED\""
+	  (tags "+PROJECT-ACTIVE-COMPLETE-ABANDONED"
 		((org-agenda-overriding-header "Projects (Inactive)")))
 	  )
 	 ((org-agenda-hide-tags-regexp "\\|*")
 	  (org-agenda-prefix-format " ")))
 
 	("dg" "Goals"
-	 ((tags "+GOAL+TODO=\"ACTIVE\""
+	 ((tags "+GOAL+ACTIVE"
 		((org-agenda-overriding-header "Goals (Active)")))
-	  (tags "+GOAL-TODO=\"ACTIVE\"-TODO=\"COMPLETE\"-TODO=\"ABANDONED\""
+	  (tags "+GOAL-ACTIVE-ABANDONED-COMPLETE"
 		((org-agenda-overriding-header "Goals (Inactive)")))
 	  )
 	 ((org-agenda-hide-tags-regexp "\\|*")
@@ -134,7 +134,7 @@
 		((org-agenda-overriding-header "Next Tasks"))))
 	 ((org-agenda-tag-filter-preset '("-ROUTINE"))
 	  (org-agenda-hide-tags-regexp "\\|*")))
-	))
+	 ))
 
 (setq org-capture-templates
       '(

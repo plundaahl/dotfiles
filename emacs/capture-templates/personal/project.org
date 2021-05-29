@@ -1,4 +1,4 @@
-** SOMEDAY %?                                                       :PROJECT:
+** %?                                                               :PROJECT:
 :PROPERTIES:
 :CATEGORY: 
 :END:

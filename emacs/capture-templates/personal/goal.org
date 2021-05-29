@@ -1,4 +1,4 @@
-** SOMEDAY %?                                                          :GOAL:
+** %?                                                                  :GOAL:
 *Vision*
 
 
