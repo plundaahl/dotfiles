@@ -105,17 +105,19 @@
 		((org-agenda-overriding-header "Complete")))))
 
 	("dp" "Projects"
-	 ((tags "+PROJECT+ACTIVE"
+	 ((tags "+PROJECT+TODO=\"ACTIVE\""
 		((org-agenda-overriding-header "Projects (Active)")))
-	  (tags "+PROJECT-ACTIVE"
+	  (tags "+PROJECT-TODO=\"ACTIVE\"-TODO=\"COMPLETE\"-TODO=\"ABANDONED\""
 		((org-agenda-overriding-header "Projects (Inactive)")))
 	  )
 	 ((org-agenda-hide-tags-regexp "\\|*")
 	  (org-agenda-prefix-format " ")))
 
 	("dg" "Goals"
-	 ((tags "+GOAL"
-		((org-agenda-overriding-header "Goals")))
+	 ((tags "+GOAL+TODO=\"ACTIVE\""
+		((org-agenda-overriding-header "Goals (Active)")))
+	  (tags "+GOAL-TODO=\"ACTIVE\"-TODO=\"COMPLETE\"-TODO=\"ABANDONED\""
+		((org-agenda-overriding-header "Goals (Inactive)")))
 	  )
 	 ((org-agenda-hide-tags-regexp "\\|*")
 	  (org-agenda-prefix-format " ")))
@@ -173,7 +175,11 @@
 	("P" "Project" entry
 	 (file+headline "~/org/Alignment.org" "Projects")
 	 (file "~/dotfiles/emacs/capture-templates/personal/project.org"))
-
+	
+	("G" "Goal" entry
+	 (file+headline "~/org/Alignment.org" "Goals")
+	 (file "~/dotfiles/emacs/capture-templates/personal/goal.org"))
+	
 	("c" "Contact")
 	("cp" "Person" entry
 	 (file+headline "~/org/Contacts.org" "People")
