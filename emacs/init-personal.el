@@ -150,9 +150,30 @@
 	 :kill-buffer 1
 	 :empty-lines-after 1)
 
-	("f" "Reflection" entry
-	 (file "~/org/!Reflections.org")
-	 "* %?"
+	("j" "Journal")
+	("ja" "Accomplishment" entry
+	 (file+headline "~/org/!Reflections.org" "Accomplishments")
+	 "* %? :ACCOMPLISHMENT:"
+	 :empty-lines-after 1)
+	("jd" "Dissapointment" entry
+	 (file+headline "~/org/!Reflections.org" "Disappointments")
+	 "* %? :DISAPPOINTMENT:"
+	 :empty-lines-after 1)
+	("jh" "High" entry
+	 (file+headline "~/org/!Reflections.org" "Highs")
+	 "* %? :DISAPPOINTMENT:"
+	 :empty-lines-after 1)
+	("js" "Low/Struggle" entry
+	 (file+headline "~/org/!Reflections.org" "Lows and Struggles")
+	 "* %? :LOW_OR_STRUGGLE:"
+	 :empty-lines-after 1)
+	("jl" "Learning" entry
+	 (file+headline "~/org/!Reflections.org" "Learnings")
+	 "* %? :LEARNING:"
+	 :empty-lines-after 1)
+	("jm" "Misc" entry
+	 (file+headline "~/org/!Reflections.org" "Misc")
+	 "* %? :JOURNAL:"
 	 :empty-lines-after 1)
 
 	("d" "Decision" entry
