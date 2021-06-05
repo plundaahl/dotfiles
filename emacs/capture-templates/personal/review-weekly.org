@@ -1,18 +1,10 @@
-** Weekly Review w%? -
+** Week w%? :ACTIVE:
+:PROPERTIES:
+:WEEK_OF: %u
+:END:
+*Links*
+- [[elisp:(pcl/org-agenda-weekly-review (org-entry-get nil "WEEK_OF"))][Weekly Reflections]]
 
-*Reflect*
-- [ ] [[id:0b9e8ce6-1ec9-4806-9eb5-e041f9037795][Review Values & Principles]]
-- [ ] Pick a Phrase for the Week
-- [ ] [[elisp:(pcl/org-agenda-weekly-review (org-entry-get nil "CREATED"))][Reflect]] on the Week
+*Focus*
 
-*Refile*
-- [ ] Process Tabs on phone
-- [ ] Process [[https://mail.protonmail.com][Email]]
-- [ ] Process Calendar ([[elisp:(org-agenda nil "a")][Agenda]], [[https://calendar.google.com/calendar/u/0/r][Google]] - 2 weeks back, 4 weeks forward)
-- [ ] Process Downloads
-- [ ] Process [[file:~/org/inbox_notes.org][Notes]]
-- [ ] Process [[file:~/org/inbox_tasks.org][Tasks]]
-
-*Plan*
-- [ ] [[elisp:(pcl/org-agenda-active-projects)][Update Projects]]
-- [ ] [[elisp:(org-agenda nil "pw")][Schedule week]]
+*Active Projects*

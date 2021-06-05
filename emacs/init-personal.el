@@ -267,7 +267,8 @@
 	 (file "~/org/decisions.org")
 	 (file "~/dotfiles/emacs/capture-templates/decision.org"))
 
-	("r" "Weekly Review" entry
+	("r" "Review")
+	("rw" "Weekly Review" entry
 	 (file+headline "~/org/Reviews.org" "Weeks")
 	 (file "~/dotfiles/emacs/capture-templates/personal/review-weekly.org")
 	 :immediate-finish t
