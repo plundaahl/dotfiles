@@ -105,15 +105,6 @@
 	  (tags "+CLOSED>\"<-1d>\""
 		((org-agenda-overriding-header "Complete")))))
 
-	("dp" "Projects"
-	 ((tags "+PROJECT+ACTIVE"
-		((org-agenda-overriding-header "Projects (Active)")))
-	  (tags "+PROJECT-ACTIVE-COMPLETE-ABANDONED"
-		((org-agenda-overriding-header "Projects (Inactive)")))
-	  )
-	 ((org-agenda-hide-tags-regexp "\\|*")
-	  (org-agenda-prefix-format " ")))
-
 	("dg" "Goals"
 	 ((tags "+GOAL+ACTIVE"
 		((org-agenda-overriding-header "Goals (Active)")))
