@@ -15,6 +15,7 @@
   (setq org-startup-folded t)
   (load-file (rel-file "auto-add-created-prop.el"))
   (load-file (rel-file "custom-skip-functions.el"))
+  (load-file (rel-file "utils.el"))
 
   ;; load custom configs if present
   (if (boundp 'override-config) (override-config) (message "ORG: No override-config found"))
