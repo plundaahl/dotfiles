@@ -122,6 +122,101 @@
 	  )
 	 ((org-agenda-hide-tags-regexp "\\|*")
 	  (org-agenda-prefix-format " ")))
+
+	;; GOAL VIEWS
+	("g" . "Goal")
+
+	("gw" "Goals (Week-Scale)"
+	 ((tags "+GOAL+SCALE=\"Weeks\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Weeks)]]"))))
+	 ((org-agenda-prefix-format " %i %-12:c")
+	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
+
+	("gm" "Goals (Month-Scale)"
+	 ((tags "+GOAL+SCALE=\"Months\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Months)]]"))))
+	 ((org-agenda-prefix-format " %i %-12:c")
+	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
+
+	("gq" "Goals (Quarter-Scale)"
+	 ((tags "+GOAL+SCALE=\"Quarters\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Quarters)]]"))))
+	 ((org-agenda-prefix-format " %i %-12:c")
+	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
+
+	("gy" "Goals (Year-Scale)"
+	 ((tags "+GOAL+SCALE=\"Years\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Years)]]"))))
+	 ((org-agenda-prefix-format " %i %-12:c")
+	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
+
+	("gW" "Active Goals (Week-Scale)"
+	 ((tags "+GOAL+SCALE=\"Weeks\"+TODO=\"ACTIVE\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Weeks)]]"))))
+	 ((org-agenda-prefix-format " %i %-12:c")
+	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
+
+	("gM" "Active Goals (Month-Scale)"
+	 ((tags "+GOAL+SCALE=\"Months\"+TODO=\"ACTIVE\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Months)]]"))))
+	 ((org-agenda-prefix-format " %i %-12:c")
+	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
+
+	("gQ" "Active Goals (Quarter-Scale)"
+	 ((tags "+GOAL+SCALE=\"Quarters\"+TODO=\"ACTIVE\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Quarters)]]"))))
+	 ((org-agenda-prefix-format " %i %-12:c")
+	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
+
+	("gY" "Active Goals (Year-Scale)"
+	 ((tags "+GOAL+SCALE=\"Years\"+TODO=\"ACTIVE\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Years)]]"))))
+	 ((org-agenda-prefix-format " %i %-12:c")
+	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
+
+	("gg" "Goals (All)"
+	 (
+	  (tags "+GOAL+SCALE=\"Years\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gy\")][Goals (Scale: Years)]]")))
+	  (tags "+GOAL+SCALE=\"Quarters\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gq\")][Goals (Scale: Quarters)]]")))
+	  (tags "+GOAL+SCALE=\"Months\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gm\")][Goals (Scale: Months)]]")))
+	  (tags "+GOAL+SCALE=\"Weeks\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gw\")][Goals (Scale: Weeks)]]")))
+	  )
+	 ((org-agenda-prefix-format " %i %-12:c")
+	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
+
+	("gG" "Goals (All)"
+	 (
+	  (tags "+GOAL+SCALE=\"Years\"+TODO=\"ACTIVE\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gY\")][Active Goals (Scale: Years)]]")))
+	  (tags "+GOAL+SCALE=\"Quarters\"+TODO=\"ACTIVE\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gQ\")][Active Goals (Scale: Quarters)]]")))
+	  (tags "+GOAL+SCALE=\"Months\"+TODO=\"ACTIVE\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gM\")][Active Goals (Scale: Months)]]")))
+	  (tags "+GOAL+SCALE=\"Weeks\"+TODO=\"ACTIVE\""
+		((org-agenda-overriding-header
+		  "[[elisp:(org-agenda nil \"gW\")][Active Goals (Scale: Weeks)]]")))
+	  )
+	 ((org-agenda-prefix-format " %i %-12:c")
+	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 	
 	("p" . "Plan...")
 
