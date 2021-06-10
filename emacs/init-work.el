@@ -74,14 +74,15 @@
 	  (agenda ""
 		  ((org-agenda-overriding-header "Agenda")
 		   (org-agenda-tag-filter-preset
-		    '("-REMINDER"))
-		   (org-agenda-span 1)
+		    '("-REMINDER" "-INACTIVE"))
 		   (org-agenda-span 1)
 		   (org-agenda-skip-scheduled-if-done t)
 		   (org-agenda-skip-deadline-if-done t)
 		   (org-agenda-hide-tags-regexp "\\|*")))
 	  (tags "+CLOSED>\"<-1d>\""
-		((org-agenda-overriding-header "Complete")))))
+		((org-agenda-overriding-header "Complete"))))
+	 ((org-agenda-tag-filter-preset
+	   '("-INACTIVE"))))
 	))
 
 (setq org-capture-templates '(
