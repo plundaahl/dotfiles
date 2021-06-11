@@ -79,8 +79,7 @@
 		   (org-agenda-skip-scheduled-if-done t)
 		   (org-agenda-skip-deadline-if-done t)
 		   (org-agenda-hide-tags-regexp "\\|*")
-		   (org-agenda-sorting-strategy
-		    '(category-keep priority-down))))
+		   ))
 	  (tags "+CLOSED>\"<-1d>\""
 		((org-agenda-overriding-header "Complete"))))
 	 ((org-agenda-tag-filter-preset
