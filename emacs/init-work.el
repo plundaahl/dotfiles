@@ -22,8 +22,13 @@
 
 (setq org-agenda-files
       '("~/org"
-	"~/org/areas"
 	"~/org/vault"
+	))
+
+(setq org-refile-targets
+      '(
+	("projects.org" :level . 1)
+	("areas.org" :level . 1)
 	))
 
 (setq org-tag-persistent-alist
