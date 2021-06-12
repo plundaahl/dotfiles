@@ -248,7 +248,7 @@
 	 :empty-lines-after 1)
 	("jh" "High" entry
 	 (file+headline "~/org/!Reflections.org" "Highs")
-	 "* %? :DISAPPOINTMENT:"
+	 "* %? :HIGH:"
 	 :empty-lines-after 1)
 	("js" "Low/Struggle" entry
 	 (file+headline "~/org/!Reflections.org" "Lows and Struggles")
