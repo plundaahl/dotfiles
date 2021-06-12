@@ -221,6 +221,15 @@
 		((org-agenda-overriding-header "Next Tasks"))))
 	 ((org-agenda-tag-filter-preset '("-ROUTINE"))
 	  (org-agenda-hide-tags-regexp "\\|*")))
+
+	("r" . "Revisit...")
+
+	("rd" "Aspirations/Dreams"
+	 ((tags "+ASPIRATION-INACTIVE"
+		((org-agenda-overriding-header "Aspirations (Active)")))
+	  (tags "+ASPIRATION+INACTIVE"
+		((org-agenda-overriding-header "Aspirations (Inactive)"))))
+	 ((org-agenda-hide-tags-regexp "\\|*")))
 	 ))
 
 (setq org-capture-templates
@@ -271,7 +280,18 @@
 	("rw" "Weekly Review" entry
 	 (file+headline "~/org/Reviews.org" "Weeks")
 	 (file "~/dotfiles/emacs/capture-templates/personal/review-weekly.org")
-	 :immediate-finish t
+	 :jump-to-captured t
+	 :time-prompt t)
+
+	("rm" "Monthly Review" entry
+	 (file+headline "~/org/Reviews.org" "Months")
+	 (file "~/dotfiles/emacs/capture-templates/personal/review-monthly.org")
+	 :jump-to-captured t
+	 :time-prompt t)
+
+	("rq" "Quarterly Review" entry
+	 (file+headline "~/org/Reviews.org" "Quarters")
+	 (file "~/dotfiles/emacs/capture-templates/personal/review-quarterly.org")
 	 :jump-to-captured t
 	 :time-prompt t)
 
