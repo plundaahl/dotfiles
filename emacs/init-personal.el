@@ -23,6 +23,7 @@
 (load (rel-file "package-defs/org-super-links/base.el"))
 (load (rel-file "package-defs/sicp/base.el"))
 (load (rel-file "func/org-metrics.el"))
+(load (rel-file "func/org-hooks.el"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ORG MODE CONFIGURATION ;;
@@ -106,9 +107,9 @@
 		((org-agenda-overriding-header "Complete")))))
 
 	("dg" "Goals"
-	 ((tags "+GOAL+ACTIVE"
+	 ((tags "+GOAL-INACTIVE"
 		((org-agenda-overriding-header "Goals (Active)")))
-	  (tags "+GOAL-ACTIVE-ABANDONED-COMPLETE"
+	  (tags "+GOAL+INACTIVE-ABANDONED-COMPLETE"
 		((org-agenda-overriding-header "Goals (Inactive)")))
 	  )
 	 ((org-agenda-hide-tags-regexp "\\|*")
@@ -117,63 +118,63 @@
 	;; GOAL VIEWS
 	("g" . "Goal")
 
-	("gw" "Goals (Week-Scale)"
+	("gW" "Goals (All Week-Scale)"
 	 ((tags "+GOAL+SCALE=\"Weeks\""
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Weeks)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gm" "Goals (Month-Scale)"
+	("gM" "Goals (All Month-Scale)"
 	 ((tags "+GOAL+SCALE=\"Months\""
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Months)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gq" "Goals (Quarter-Scale)"
+	("gQ" "Goals (All Quarter-Scale)"
 	 ((tags "+GOAL+SCALE=\"Quarters\""
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Quarters)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gy" "Goals (Year-Scale)"
+	("gY" "Goals (All Year-Scale)"
 	 ((tags "+GOAL+SCALE=\"Years\""
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Years)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gW" "Active Goals (Week-Scale)"
-	 ((tags "+GOAL+SCALE=\"Weeks\"+TODO=\"ACTIVE\""
+	("gw" "Goals (Active Week-Scale)"
+	 ((tags "+GOAL+SCALE=\"Weeks\"-INACTIVE"
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Weeks)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gM" "Active Goals (Month-Scale)"
-	 ((tags "+GOAL+SCALE=\"Months\"+TODO=\"ACTIVE\""
+	("gm" "Goals (Active Month-Scale)"
+	 ((tags "+GOAL+SCALE=\"Months\"-INACTIVE"
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Months)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gQ" "Active Goals (Quarter-Scale)"
-	 ((tags "+GOAL+SCALE=\"Quarters\"+TODO=\"ACTIVE\""
+	("gq" "Goals (Active Quarter-Scale)"
+	 ((tags "+GOAL+SCALE=\"Quarters\"-INACTIVE"
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Quarters)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gY" "Active Goals (Year-Scale)"
-	 ((tags "+GOAL+SCALE=\"Years\"+TODO=\"ACTIVE\""
+	("gy" "Goals (Active Year-Scale)"
+	 ((tags "+GOAL+SCALE=\"Years\"-INACTIVE"
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Years)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gg" "Goals (All)"
+	("gG" "Goals (All)"
 	 (
 	  (tags "+GOAL+SCALE=\"Years\""
 		((org-agenda-overriding-header
@@ -191,18 +192,18 @@
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gG" "Goals (All)"
+	("gg" "Goals (All Active)"
 	 (
-	  (tags "+GOAL+SCALE=\"Years\"+TODO=\"ACTIVE\""
+	  (tags "+GOAL+SCALE=\"Years\"-INACTIVE"
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gY\")][Active Goals (Scale: Years)]]")))
-	  (tags "+GOAL+SCALE=\"Quarters\"+TODO=\"ACTIVE\""
+	  (tags "+GOAL+SCALE=\"Quarters\"-INACTIVE"
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gQ\")][Active Goals (Scale: Quarters)]]")))
-	  (tags "+GOAL+SCALE=\"Months\"+TODO=\"ACTIVE\""
+	  (tags "+GOAL+SCALE=\"Months\"-INACTIVE"
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gM\")][Active Goals (Scale: Months)]]")))
-	  (tags "+GOAL+SCALE=\"Weeks\"+TODO=\"ACTIVE\""
+	  (tags "+GOAL+SCALE=\"Weeks\"-INACTIVE"
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gW\")][Active Goals (Scale: Weeks)]]")))
 	  )
@@ -217,7 +218,7 @@
 		   (org-agenda-start-day "+3")
 		   (org-agenda-skip-scheduled-if-done t)
 		   (org-agenda-prefix-format " %i %-12:c% s")))
-	  (tags "+ACTIVE+TODO=\"NEXT\"-SCHEDULED={.}-ROUTINE"
+	  (tags "-INACTIVE+TODO=\"NEXT\"-SCHEDULED={.}-ROUTINE"
 		((org-agenda-overriding-header "Next Tasks"))))
 	 ((org-agenda-tag-filter-preset '("-ROUTINE"))
 	  (org-agenda-hide-tags-regexp "\\|*")))

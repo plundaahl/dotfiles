@@ -1,4 +1,4 @@
-** Week w%? :ACTIVE:
+** Week 2021-w%?
 :PROPERTIES:
 :WEEK_OF: %u
 :END:
