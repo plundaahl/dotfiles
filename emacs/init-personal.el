@@ -86,6 +86,7 @@
 	;; ALIGNMENT HIERARCHY
 	"GOAL"
 	"PROJECT"
+	"AREA"
 	))
 
 (setq org-agenda-custom-commands
@@ -231,6 +232,14 @@
 	  (tags "+ASPIRATION+INACTIVE"
 		((org-agenda-overriding-header "Aspirations (Inactive)"))))
 	 ((org-agenda-hide-tags-regexp "\\|*")))
+
+	("ra" "Areas"
+	 ((tags "+AREA-INACTIVE"
+		((org-agenda-overriding-header "Areas (Active)")))
+	  (tags "+AREA+INACTIVE"
+		((org-agenda-overriding-header "Areas (Inactive)"))))
+	 ((org-agenda-hide-tags-regexp "\\|*")
+	  (org-agenda-prefix-format "  ")))
 	 ))
 
 (setq org-capture-templates
