@@ -45,6 +45,7 @@
 	("Metric" . ?m)
 	("MEETING" . ?M)
 	("REMINDER" . ?r)
+	("ONGOING" . ?o)
 	))
 
 (setq org-todo-keywords
@@ -76,6 +77,10 @@
 		((org-agenda-overriding-header "Reminders & Events")
 		 (org-agenda-prefix-format "- ")
 		 (org-agenda-hide-tags-regexp "\\|*")))
+  	  (tags "ONGOING"
+		(
+		 (org-agenda-hide-tags-regexp "\\|*")
+		 (org-agenda-overriding-header "Ongoing/Regular Tasks")))
 	  (agenda ""
 		  ((org-agenda-overriding-header "Agenda")
 		   (org-agenda-tag-filter-preset
