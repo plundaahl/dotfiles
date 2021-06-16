@@ -22,6 +22,7 @@
 (load (rel-file "package-defs/org-ql/base.el"))
 (load (rel-file "package-defs/org-super-links/base.el"))
 (load (rel-file "package-defs/sicp/base.el"))
+(load (rel-file "package-defs/ts/base.el"))
 (load (rel-file "func/org-metrics.el"))
 (load (rel-file "func/org-hooks.el"))
 
