@@ -14,6 +14,9 @@
   (load (rel-file "package-defs/org/base.el"))
   (load (rel-file "package-defs/org-ql/base.el")))
 
+(setq org-priority-lowest ?F)
+(setq org-priority-default ?F)
+
 (setq org-tags-exclude-from-inheritance
       '("PROJECT"
 	"REMINDER"
