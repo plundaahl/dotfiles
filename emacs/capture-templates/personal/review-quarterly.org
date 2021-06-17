@@ -1,6 +1,11 @@
 ** Quarter 2021-Q%?
+:PROPERTIES:
+:QUARTER_OF: %u
+:END:
 *Links*
-- (TODO: Add Reflections)
+- [[elisp:(pcl/org-journal-view 'quarter (pcl/orgq (point) :prop :QUARTER_OF))][Reflections]]
+
+*Months*
 
 *Focus*
 

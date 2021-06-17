@@ -1,7 +1,11 @@
 ** Month 2021-%?
+:PROPERTIES:
+:MONTH_OF: %u
+:END:
 *Links*
-- (TODO: Add Reflections)
-- Add weeks
+- [[elisp:(pcl/org-journal-view 'month (pcl/orgq (point) :prop :MONTH_OF))][Reflections]]
+
+*Weeks*
 
 *Focus*
 

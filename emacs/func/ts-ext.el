@@ -1,9 +1,6 @@
 ;; -*- mode: elisp -*-
-
-;;;;;;;;;;;;;;;;;;
-;; TIME HELPERS ;;
-;;;;;;;;;;;;;;;;;;
 (require 'ts)
+
 (defun pcl/ts-floor (time unit)
   "Rounds TIME down to the nearest UNIT, returning the result as a ts struct.
 
@@ -18,7 +15,7 @@ UNIT must be quoted, and must be one of:
 - 'month 'mon 'M
 - 'quarter 'qrt 'q
 - 'year 'yr 'y"
-  (let ((ts (cond ((ts-p time) time)
+  (let ((ts (cond ((ts-p time) (copy-ts time))
 		  ((stringp time) (ts-parse time))))
 	(radix (cond ((or (equal unit 'second) (equal unit 'sec) (equal unit 's)) 0)
 		     ((or (equal unit 'min) (equal unit 'minute) (equal unit 'm)) 1)
@@ -30,7 +27,7 @@ UNIT must be quoted, and must be one of:
 		     ((or (equal unit 'yr) (equal unit 'year) (equal unit 'y)) 7))))
     ;; Error handling
     (when (null ts) (error "Unrecognized type for paramater time" time))
-    (when (null radix) (error "Invalid unit" unit))
+    (when (null radix) (error "Invalid unit %S" unit))
     ;; Conversion:                                                    Floor to nearest...
     (when (>= radix 1) (ts-adjustf ts 'second (- (ts-second ts))))    ;; minute
     (when (>= radix 2) (ts-adjustf ts 'minute (- (ts-minute ts))))    ;; hour
@@ -55,38 +52,6 @@ UNIT must be one of:
 - 'month 'mon 'M
 - 'quarter 'qrt 'q
 - 'year 'yr 'y"
-  (let ((ts (pcl/ts-floor time))
+  (let ((ts (pcl/ts-floor time unit))
 	(beg (pcl/ts-floor period unit)))
     (ts= ts beg)))
-
-;;;;;;;;;;;;;;;;;;;;;;;
-;; ORG QUERY HELPERS ;;
-;;;;;;;;;;;;;;;;;;;;;;;
-;; Queries for org headlines
-(defun pcl/orgq (pom query &rest args)
-  "Queries org headlines (runs QUERY at point POM with ARGS). Queries can be
-configured via the variable pcl/orgq-queries, so you can add new ones as you
-feel like it"
-  (apply (plist-get pcl/orgq-queries query) (or pom (point)) args))
-
-(setq pcl/orgq-queries
-      '(:prop (lambda (pom property)
-		(let ((element (org-element-headline-parser pom)))
-		  (when (equal (car element) 'headline)
-		    (plist-get (cadr element) property))))))
-
-;;;;;;;;;;;;;;;;;;;
-;; PLIST HELPERS ;;
-;;;;;;;;;;;;;;;;;;;
-(defun pcl/plist-keys (plist)
-  "Returns all keys in plist PLIST"
-  (if (null plist)
-      '()
-       (cons (car plist) (pcl/plist-keys (cddr plist)))))
-
-(defun pcl/plist-map (plist function)
-  "Runs FUNCTION for every pair in PLIST. FUNCTION should take two arguments, the key and the value"
-  (if (null plist)
-      nil
-    (cons (funcall function (car plist) (cadr plist))
- 	  (pcl/plist-map (cddr plist) function))))

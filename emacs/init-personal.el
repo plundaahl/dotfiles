@@ -25,6 +25,10 @@
 (load (rel-file "package-defs/ts/base.el"))
 (load (rel-file "func/org-metrics.el"))
 (load (rel-file "func/org-hooks.el"))
+(load (rel-file "func/orgq.el"))
+(load (rel-file "func/ts-ext.el"))
+(load (rel-file "func/plist-ext.el"))
+(load (rel-file "func/org-skip.el"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ORG MODE CONFIGURATION ;;
@@ -328,6 +332,24 @@
 	 (file+headline "~/org/Contacts.org" "Companies")
 	 (file "~/dotfiles/emacs/capture-templates/personal/contact-company.org"))
 	))
+
+(defun pcl/org-journal-view (unit period)
+  (let ((org-agenda-custom-commands
+	 '(("X" "Reflections"
+	    (
+	     (tags "+ACCOMPLISHMENT-IGNORE" ((org-agenda-overriding-header "Accomplishments")))
+	     (tags "+DISAPPOINTMENT-IGNORE" ((org-agenda-overriding-header "Disappointments")))
+	     (tags "+HIGH-IGNORE" ((org-agenda-overriding-header "Highs")))
+	     (tags "+LOW_OR_STRUGGLE-IGNORE" ((org-agenda-overriding-header "Lows/Struggles")))
+	     (tags "+LEARNING-IGNORE" ((org-agenda-overriding-header "Learnings")))
+	     )
+	    ((org-agenda-skip-function
+	      '(pcl/org-skip-unless
+		`(:created-in ,unit :of ,period)))
+	     (org-agenda-prefix-format "  ")
+	     (org-agenda-hide-tags-regexp "\\|*")
+	     )))))
+    (org-agenda nil "X")))
 
 ;; Refile item to task list
 (defun org-refile-to-tasklist () "" (interactive) (org-refile-to-weektree "~/org/!Tasks.org"))

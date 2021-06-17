@@ -3,7 +3,7 @@
 :WEEK_OF: %u
 :END:
 *Links*
-- [[elisp:(pcl/org-agenda-weekly-review (org-entry-get nil "WEEK_OF"))][Weekly Reflections]]
+- [[elisp:(pcl/org-journal-view 'week (pcl/orgq (point) :prop :WEEK_OF))][Reflections]]
 
 *Focus*
 
