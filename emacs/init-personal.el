@@ -63,11 +63,14 @@
 	("IGNORE" . ?I)
 	("ROUTINE" . ?R)
 	("REMINDER" . ?r)
-	;; ALIGNMENT HIERARCHY
-	(:startgroup)
+	(:startgrouptag)
+	("ALIGNMENT")
+	(:grouptags)
+	("AREA")
 	("GOAL")
 	("PROJECT")
-	(:endgroup)
+	("ASPIRATION")
+	(:endgrouptag)
 	;; PILLARS
 	("admin")
 	("career")
@@ -121,110 +124,110 @@
 	 ((org-agenda-hide-tags-regexp "\\|*")
 	  (org-agenda-prefix-format " ")))
 
-	;; GOAL VIEWS
-	("g" . "Goal")
+	;; PROJECT VIEWS
+	("p" . "Project")
 
-	("gW" "Goals (All Week-Scale)"
-	 ((tags "+GOAL+SCALE=\"Weeks\""
+	("pW" "Projects (All Week-Scale)"
+	 ((tags "+PROJECT+SCALE=\"Weeks\""
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Weeks)]]"))))
+		  "[[elisp:(org-agenda nil \"pg\")][Projects (Scale: Weeks)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gM" "Goals (All Month-Scale)"
-	 ((tags "+GOAL+SCALE=\"Months\""
+	("pM" "Projects (All Month-Scale)"
+	 ((tags "+PROJECT+SCALE=\"Months\""
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Months)]]"))))
+		  "[[elisp:(org-agenda nil \"pg\")][Projects (Scale: Months)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gQ" "Goals (All Quarter-Scale)"
-	 ((tags "+GOAL+SCALE=\"Quarters\""
+	("pQ" "Projects (All Quarter-Scale)"
+	 ((tags "+PROJECT+SCALE=\"Quarters\""
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Quarters)]]"))))
+		  "[[elisp:(org-agenda nil \"pg\")][Projects (Scale: Quarters)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gY" "Goals (All Year-Scale)"
-	 ((tags "+GOAL+SCALE=\"Years\""
+	("pY" "Projects (All Year-Scale)"
+	 ((tags "+PROJECT+SCALE=\"Years\""
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gg\")][Goals (Scale: Years)]]"))))
+		  "[[elisp:(org-agenda nil \"pg\")][Projects (Scale: Years)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gw" "Goals (Active Week-Scale)"
-	 ((tags "+GOAL+SCALE=\"Weeks\"-INACTIVE"
+	("pw" "Projects (Active Week-Scale)"
+	 ((tags "+PROJECT+SCALE=\"Weeks\"-INACTIVE"
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Weeks)]]"))))
+		  "[[elisp:(org-agenda nil \"pG\")][Active Projects (Scale: Weeks)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gm" "Goals (Active Month-Scale)"
-	 ((tags "+GOAL+SCALE=\"Months\"-INACTIVE"
+	("pm" "Projects (Active Month-Scale)"
+	 ((tags "+PROJECT+SCALE=\"Months\"-INACTIVE"
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Months)]]"))))
+		  "[[elisp:(org-agenda nil \"pG\")][Active Projects (Scale: Months)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gq" "Goals (Active Quarter-Scale)"
-	 ((tags "+GOAL+SCALE=\"Quarters\"-INACTIVE"
+	("pq" "Projects (Active Quarter-Scale)"
+	 ((tags "+PROJECT+SCALE=\"Quarters\"-INACTIVE"
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Quarters)]]"))))
+		  "[[elisp:(org-agenda nil \"pG\")][Active Projects (Scale: Quarters)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gy" "Goals (Active Year-Scale)"
-	 ((tags "+GOAL+SCALE=\"Years\"-INACTIVE"
+	("py" "Projects (Active Year-Scale)"
+	 ((tags "+PROJECT+SCALE=\"Years\"-INACTIVE"
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gG\")][Active Goals (Scale: Years)]]"))))
+		  "[[elisp:(org-agenda nil \"gG\")][Active Projects (Scale: Years)]]"))))
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gG" "Goals (All)"
+	("pP" "Projects (All)"
 	 (
-	  (tags "+GOAL+SCALE=\"Years\""
+	  (tags "+PROJECT+SCALE=\"Years\""
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gy\")][Goals (Scale: Years)]]")))
-	  (tags "+GOAL+SCALE=\"Quarters\""
+		  "[[elisp:(org-agenda nil \"gy\")][Projects (Scale: Years)]]")))
+	  (tags "+PROJECT+SCALE=\"Quarters\""
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gq\")][Goals (Scale: Quarters)]]")))
-	  (tags "+GOAL+SCALE=\"Months\""
+		  "[[elisp:(org-agenda nil \"gq\")][Projects (Scale: Quarters)]]")))
+	  (tags "+PROJECT+SCALE=\"Months\""
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gm\")][Goals (Scale: Months)]]")))
-	  (tags "+GOAL+SCALE=\"Weeks\""
+		  "[[elisp:(org-agenda nil \"gm\")][Projects (Scale: Months)]]")))
+	  (tags "+PROJECT+SCALE=\"Weeks\""
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gw\")][Goals (Scale: Weeks)]]")))
-          (tags "+GOAL+SCALE=\"\""
+		  "[[elisp:(org-agenda nil \"gw\")][Projects (Scale: Weeks)]]")))
+          (tags "+PROJECT+SCALE=\"\""
 		((org-agenda-overriding-header
-		  "Goals (No Assigned Scale)")))
+		  "Projects (No Assigned Scale)")))
 	  )
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
 
-	("gg" "Goals (All Active)"
+	("pp" "Projects (All Active)"
 	 (
-	  (tags "+GOAL+SCALE=\"Years\"-INACTIVE"
+	  (tags "+PROJECT+SCALE=\"Years\"-INACTIVE"
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gY\")][Active Goals (Scale: Years)]]")))
-	  (tags "+GOAL+SCALE=\"Quarters\"-INACTIVE"
+		  "[[elisp:(org-agenda nil \"gY\")][Active Projects (Scale: Years)]]")))
+	  (tags "+PROJECT+SCALE=\"Quarters\"-INACTIVE"
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gQ\")][Active Goals (Scale: Quarters)]]")))
-	  (tags "+GOAL+SCALE=\"Months\"-INACTIVE"
+		  "[[elisp:(org-agenda nil \"gQ\")][Active Projects (Scale: Quarters)]]")))
+	  (tags "+PROJECT+SCALE=\"Months\"-INACTIVE"
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gM\")][Active Goals (Scale: Months)]]")))
-	  (tags "+GOAL+SCALE=\"Weeks\"-INACTIVE"
+		  "[[elisp:(org-agenda nil \"gM\")][Active Projects (Scale: Months)]]")))
+	  (tags "+PROJECT+SCALE=\"Weeks\"-INACTIVE"
 		((org-agenda-overriding-header
-		  "[[elisp:(org-agenda nil \"gW\")][Active Goals (Scale: Weeks)]]")))
-          (tags "+GOAL+SCALE=\"\"-INACTIVE"
+		  "[[elisp:(org-agenda nil \"gW\")][Active Projects (Scale: Weeks)]]")))
+          (tags "+PROJECT+SCALE=\"\"-INACTIVE"
 		((org-agenda-overriding-header
-		  "Goals (No Assigned Scale)")))
+		  "Projects (No Assigned Scale)")))
 	  )
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
-	
-	("p" . "Plan...")
 
-	("pw" "Plan Week"
+	("P" . "Plan...")
+
+	("Pw" "Plan Week"
 	 ((agenda ""
 		  ((org-agenda-span 'week)
 		   (org-agenda-start-day "+3")
@@ -325,11 +328,11 @@
 	("P" "Project" entry
 	 (file+headline "~/org/Alignment.org" "Projects")
 	 (file "~/dotfiles/emacs/capture-templates/personal/project.org"))
-	
+
 	("G" "Goal" entry
 	 (file+headline "~/org/Alignment.org" "Goals")
 	 (file "~/dotfiles/emacs/capture-templates/personal/goal.org"))
-	
+
 	("c" "Contact")
 	("cp" "Person" entry
 	 (file+headline "~/org/Contacts.org" "People")
