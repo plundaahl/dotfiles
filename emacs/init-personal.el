@@ -194,6 +194,9 @@
 	  (tags "+GOAL+SCALE=\"Weeks\""
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gw\")][Goals (Scale: Weeks)]]")))
+          (tags "+GOAL+SCALE=\"\""
+		((org-agenda-overriding-header
+		  "Goals (No Assigned Scale)")))
 	  )
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
@@ -212,6 +215,9 @@
 	  (tags "+GOAL+SCALE=\"Weeks\"-INACTIVE"
 		((org-agenda-overriding-header
 		  "[[elisp:(org-agenda nil \"gW\")][Active Goals (Scale: Weeks)]]")))
+          (tags "+GOAL+SCALE=\"\"-INACTIVE"
+		((org-agenda-overriding-header
+		  "Goals (No Assigned Scale)")))
 	  )
 	 ((org-agenda-prefix-format " %i %-12:c")
 	  (org-agenda-sorting-strategy '(todo-state-down priority-down))))
@@ -226,7 +232,7 @@
 		   (org-agenda-prefix-format " %i %-12:c% s")))
 	  (tags "-INACTIVE+TODO=\"NEXT\"-SCHEDULED={.}-ROUTINE"
 		((org-agenda-overriding-header "Next Tasks"))))
-	 ((org-agenda-tag-filter-preset '("-ROUTINE"))
+	 ((org-agenda-tag-filter-preset '("-ROUTINE" "-WEEK" "-MONTH" "-QUARTER"))
 	  (org-agenda-hide-tags-regexp "\\|*")))
 
 	("r" . "Revisit...")
