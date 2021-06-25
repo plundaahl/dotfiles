@@ -95,6 +95,9 @@ map <Leader>f :FZF<CR>
 map <Leader>] :bn<CR>
 map <Leader>[ :bp<CR>
 
+" Type hinting
+nnoremap <silent> <leader>w :call CocActionAsync('doHover')<cr>
+
 " Refresh All Files
 map <Leader>r :bufdo e<CR>
 
