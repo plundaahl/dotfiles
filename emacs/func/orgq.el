@@ -14,7 +14,14 @@ feel like it"
 
 ;; Set of available queries
 (setq pcl/orgq-queries
-      '(:prop (lambda (pom property)
-		(let ((element (org-element-headline-parser pom)))
-		  (when (equal (car element) 'headline)
-		    (plist-get (cadr element) property))))))
+      '(
+	:prop
+	(lambda (pom property)
+       	  (let ((element (org-element-headline-parser pom)))
+	    (when (equal (car element) 'headline)
+	      (plist-get (cadr element) property))))
+
+	:tags
+	(lambda (pom)
+	  (org-get-tags pom nil))
+	))

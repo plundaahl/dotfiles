@@ -1,6 +1,11 @@
 ;; -*- mode: elisp -*-
 (require 'ts)
 
+(defun pcl/ts-parse (time)
+  (cond ((ts-p time) (copy-ts time))
+	((stringp time) (ts-parse time))
+	('t (error "Cannot parse ts object %S" time))))
+
 (defun pcl/ts-floor (time unit)
   "Rounds TIME down to the nearest UNIT, returning the result as a ts struct.
 
