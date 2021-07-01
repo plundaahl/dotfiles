@@ -39,7 +39,8 @@ UNIT must be quoted, and must be one of:
     (when (>= radix 3) (ts-adjustf ts 'hour (- (ts-hour ts))))        ;; day
     (when (= radix 4) (ts-adjustf ts 'day (- (ts-dow ts))))           ;; week
     (when (>= radix 5) (ts-adjustf ts 'day (- 1 (ts-day ts))))        ;; month
-    (when (= radix 6) (ts-adjustf ts 'month (- (% (ts-month ts) 3)))) ;; quarter
+    (when (= radix 6) (ts-adjustf ts 'month (- (% (- (ts-month ts) 1) ;; quarter
+						  3))))
     (when (>= radix 7) (ts-adjustf ts 'month (- 1 (ts-month ts))))    ;; year
     ;; Result
     ts))
