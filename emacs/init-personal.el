@@ -78,6 +78,7 @@
 	("GOAL")
 	("PROJECT")
 	("ASPIRATION")
+	("LIST")
 	(:endgrouptag)
 	;; PILLARS
 	("admin")
@@ -108,20 +109,34 @@
 (setq org-agenda-custom-commands
       '(
 	("d" . "Dashboards")
+
 	("dd" "Daily Action"
-	 ((agenda ""
+	 ((tags "ALLTAGS={WEEK\\|MONTH\\|QUARTER\\|YEAR}&+TODO=\"CURRENT\""
+		((org-agenda-overriding-header "Cycles")
+		 (org-agenda-prefix-format "  ")
+		 (org-agenda-hide-tags-regexp "\\|*")))
+	  (tags "+SCHEDULED>\"<-1d>\"+SCHEDULED<\"<+1d>\"+REMINDER-TODO=\"DONE\"-TODO=\"CANCELLED\""
+		((org-agenda-overriding-header "Reminders & Events")
+		 (org-agenda-prefix-format "- ")
+		 (org-agenda-hide-tags-regexp "\\|*")))
+	  (agenda ""
 		  ((org-agenda-overriding-header "Agenda")
 		   (org-agenda-span 1)
 		   (org-agenda-skip-scheduled-if-done t)
 		   (org-agenda-skip-function
 		    '(org-agenda-skip-entry-if 'regexp ":REMINDER:"))
 		   (org-agenda-hide-tags-regexp "\\|*")))
-	  (tags "+SCHEDULED>\"<-1d>\"+SCHEDULED<\"<+1d>\"+REMINDER-TODO=\"DONE\"-TODO=\"CANCELLED\""
-		((org-agenda-overriding-header "Reminders & Events")
-		 (org-agenda-prefix-format "- ")
-		 (org-agenda-hide-tags-regexp "\\|*")))
 	  (tags "+CLOSED>\"<-1d>\""
-		((org-agenda-overriding-header "Complete")))))
+		((org-agenda-overriding-header "Complete")))
+	  )
+	 )
+
+	("dl" "Lists"
+	 ((tags "+LIST-INACTIVE"
+		((org-agenda-overriding-header "Lists")
+		 (org-agenda-prefix-format "  ")
+		 (org-agenda-hide-tags-regexp "\\|*")))
+	  ))
 
 	("dg" "Goals"
 	 ((tags "+GOAL-INACTIVE"
