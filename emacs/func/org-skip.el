@@ -6,6 +6,12 @@
       nil
     (pcl/orgq (point) ':prop :end)))
 
+(defun pcl/org-skip-if (&rest predicates)
+  ""
+  (if (seq-every-p 'pcl/eval-org-skip-predicate predicates)
+      (pcl/orgq (point) ':prop :end)
+    nil))
+
 (defun pcl/eval-org-skip-predicate (predicate)
   (apply (plist-get pcl/org-skip-predicates (car predicate))
 	 (cdr predicate)))
