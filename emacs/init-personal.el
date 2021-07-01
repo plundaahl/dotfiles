@@ -123,6 +123,7 @@
 		  ((org-agenda-overriding-header "Agenda")
 		   (org-agenda-span 1)
 		   (org-agenda-skip-scheduled-if-done t)
+                   (org-agenda-prefix-format " %i %-12:c")
 		   (org-agenda-skip-function
 		    '(org-agenda-skip-entry-if 'regexp ":REMINDER:"))
 		   (org-agenda-hide-tags-regexp "\\|*")))
