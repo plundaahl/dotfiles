@@ -20,8 +20,4 @@ feel like it"
        	  (let ((element (org-element-headline-parser pom)))
 	    (when (equal (car element) 'headline)
 	      (plist-get (cadr element) property))))
-
-	:tags
-	(lambda (pom)
-	  (org-get-tags pom nil))
 	))

@@ -37,6 +37,4 @@
 	  (let ((time (pcl/orgq (point) ':prop :CREATED)))
 	    (and (not (null time))
 		 (pcl/ts-in-p time of unit))))
-
-	:tags-include
 	))
