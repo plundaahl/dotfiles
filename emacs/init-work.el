@@ -14,6 +14,13 @@
   (load (rel-file "package-defs/org/base.el"))
   (load (rel-file "package-defs/org-ql/base.el")))
 
+(setq org-modules
+      '(
+	ol-bbdb
+	ol-docview
+	ol-info
+	org-id
+	))
 (setq org-priority-lowest ?F)
 (setq org-priority-default ?F)
 

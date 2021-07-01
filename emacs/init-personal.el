@@ -33,6 +33,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ORG MODE CONFIGURATION ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq org-modules
+      '(
+	ol-bbdb
+	ol-docview
+	org-habit
+	ol-info
+	org-id
+	))
 (setq org-priority-lowest ?F)
 (setq org-priority-default ?F)
 (setq org-log-done "time")
