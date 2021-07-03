@@ -61,3 +61,13 @@ UNIT must be one of:
   (let ((ts (pcl/ts-floor time unit))
 	(beg (pcl/ts-floor period unit)))
     (ts= ts beg)))
+
+(defun pcl/ts-cmp (time-a time-b)
+  (let ((ts-a (if (null time-a) time-a (pcl/ts-parse time-a)))
+	(ts-b (if (null time-b) time-b (pcl/ts-parse time-b))))
+    (cond ((and (null ts-b) (null ts-a)) nil)
+          ((null ts-b) 1)
+          ((null ts-a) -1)
+	  ((ts< ts-a ts-b) -1)
+	  ((ts> ts-a ts-b) 1)
+	  ('t -1))))
