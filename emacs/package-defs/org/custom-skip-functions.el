@@ -58,20 +58,21 @@
 	   )))
     (org-agenda nil "X")))
 
-(defun pcl/org-agenda-active-projects ()
-    (let ((org-agenda-custom-commands
-	   '(("X" "Projects"
-	    (
-	     (tags "+PROJECT+ACTIVE"
-		   ((org-agenda-overriding-header "Projects (Active)")))
-	     (tags "+PROJECT-ACTIVE"
-		   ((org-agenda-overriding-header "Projects (On-Hold)")))	     
-	     )
-	    (
-	     (org-agenda-files '("~/org/Alignment.org"))
-	     (org-agenda-prefix-format " %s")
-             (org-agenda-hide-tags-regexp (regexp-opt '("PROJECT" "ACTIVE")))
-	     )
-	    ))
-	 ))
-    (org-agenda nil "X")))
+;; ;; DEPRECATED
+;; (defun pcl/org-agenda-active-projects ()
+;;     (let ((org-agenda-custom-commands
+;; 	   '(("X" "Projects"
+;; 	    (
+;; 	     (tags "+PROJECT+TODO=\"ACTIVE\""
+;; 		   ((org-agenda-overriding-header "Projects (Active)")))
+;; 	     (tags "+PROJECT-TODO=\"ACTIVE\""
+;; 		   ((org-agenda-overriding-header "Projects (On-Hold)")))
+;; 	     )
+;; 	    (
+;; 	     (org-agenda-files '("~/org/Alignment.org"))
+;; 	     (org-agenda-prefix-format " %s")
+;;              (org-agenda-hide-tags-regexp (regexp-opt '("PROJECT" "ACTIVE")))
+;; 	     )
+;; 	    ))
+;; 	 ))
+;;     (org-agenda nil "X")))
