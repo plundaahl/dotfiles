@@ -45,7 +45,7 @@
 (setq org-priority-default ?F)
 (setq org-log-done "time")
 
-h(setq org-habit-following-days 1)
+(setq org-habit-following-days 1)
 (setq org-habit-graph-column 60)
 (setq org-habit-show-done-always-green nil)
 (setq org-habit-show-habits-only-for-today nil)
@@ -76,7 +76,9 @@ h(setq org-habit-following-days 1)
 	("IGNORE" . ?I)
 	("ROUTINE" . ?R)
 	("REMINDER" . ?r)
-	(:startgrouptag)
+
+	;; ALIGNMENT TOOLS
+	(:startgroup)
 	("ALIGNMENT")
 	(:grouptags)
 	("AREA")
@@ -84,7 +86,29 @@ h(setq org-habit-following-days 1)
 	("PROJECT")
 	("ASPIRATION")
 	("LIST")
-	(:endgrouptag)
+	(:endgroup)
+
+	;; KNOWLEDGE MANAGEMENT TAGS
+	("SUBJECT" . ?s)
+	("tool")
+	(:startgroup)
+	("media")
+	(:grouptags)
+	("article")
+	("video")
+	("book")
+	("paper")
+	("podcast")
+	(:endgroup)
+	(:startgroup)
+	(:grouptags)
+	("index")
+	("note")
+	("thought")
+	("concept")
+	("technique")
+	("idea")
+	(:endgroup)
 	))
 
 (setq org-tags-exclude-from-inheritance
@@ -96,6 +120,8 @@ h(setq org-habit-following-days 1)
 	"GOAL"
 	"PROJECT"
 	"AREA"
+	;; KNOWLEDGE MANAGEMENT
+	"SUBJECT"
 	))
 
 (setq org-agenda-custom-commands
