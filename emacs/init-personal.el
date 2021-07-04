@@ -132,7 +132,7 @@
 		   (org-agenda-skip-function
 		    '(org-agenda-skip-entry-if 'regexp ":REMINDER:"))
 		   (org-agenda-hide-tags-regexp "\\|*")))
-	  (tags "+CLOSED>\"<-1d>\""
+	  (tags "+CLOSED>=\"<today>\""
 		((org-agenda-overriding-header "Complete")))
 	  )
 	 )
