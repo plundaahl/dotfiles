@@ -45,6 +45,11 @@
 (setq org-priority-default ?F)
 (setq org-log-done "time")
 
+(setq org-habit-following-days 1)
+(setq org-habit-graph-column 60)
+(setq org-habit-show-done-always-green nil)
+(setq org-habit-show-habits-only-for-today nil)
+
 (setq org-agenda-files
       '(
 	"~/org/!Tasks.org"
