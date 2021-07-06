@@ -46,6 +46,7 @@
 	("Note" . ?n)
 	("Tool" . ?t)
 	("Concept" . ?c)
+	("KEEP" . ?k)
 	(:startgrouptag)
 	("Reference" . ?R)
 	("Article" . ?A)
@@ -55,7 +56,7 @@
 	("Metric" . ?m)
 	("MEETING" . ?M)
 	("REMINDER" . ?r)
-	("ONGOING" . ?o)
+	("QUICKLINK" . ?q)
 	))
 
 (setq org-todo-keywords
@@ -87,10 +88,10 @@
 		((org-agenda-overriding-header "Reminders & Events")
 		 (org-agenda-prefix-format "- ")
 		 (org-agenda-hide-tags-regexp "\\|*")))
-  	  (tags "ONGOING"
+          (tags "QUICKLINK"
 		(
 		 (org-agenda-hide-tags-regexp "\\|*")
-		 (org-agenda-overriding-header "Ongoing/Regular Tasks")))
+		 (org-agenda-overriding-header "Pinned")))
 	  (agenda ""
 		  ((org-agenda-overriding-header "Agenda")
 		   (org-agenda-tag-filter-preset
