@@ -1,0 +1,21 @@
+* Design for %?
+
+*Target Requirements*
+1. <requirement>
+   - <how this is solved for>
+
+*Assumptions*
+- <assumption>
+
+*Description*
+<prose>
+
+*Implementation*
+Constraints
+- 
+
+Areas of flexibility
+- 
+
+*Impacts*
+- <area of architecture impacted by this>
