@@ -12,6 +12,7 @@
 			  (js . t)
 			  (plantuml . t))))))
   (load (rel-file "package-defs/org/base.el"))
+  (load (rel-file "package-defs/org-super-links/base.el"))
   (load (rel-file "package-defs/org-ql/base.el")))
 
 (setq org-modules

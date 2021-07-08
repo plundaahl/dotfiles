@@ -2,8 +2,8 @@
 
 (use-package org-super-links
   :after org
-  :quelpa (org-super-links
-	   :fetcher github
+  :requires quelpa-use-package
+  :quelpa (:fetcher github
 	   :upgrade t
 	   :repo "toshism/org-super-links")
   :init
