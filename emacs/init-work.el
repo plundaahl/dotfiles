@@ -12,6 +12,7 @@
 			  (js . t)
 			  (plantuml . t))))))
   (load (rel-file "package-defs/org/base.el"))
+  (load (rel-file "package-defs/org-super-links/base.el"))
   (load (rel-file "package-defs/org-ql/base.el")))
 
 (setq org-modules
@@ -42,21 +43,25 @@
 	))
 
 (setq org-tag-persistent-alist
-      '(("Index" . ?i)
-	("Note" . ?n)
-	("Tool" . ?t)
-	("Concept" . ?c)
-	("KEEP" . ?k)
-	(:startgrouptag)
-	("Reference" . ?R)
-	("Article" . ?A)
-	("Video" . ?V)
-	(:endgrouptag)
-	("Appointment" . ?a)
-	("Metric" . ?m)
+      '(
+        ("KEEP" . ?k)
+        ("QUICKLINK" . ?q)
+	("Appointment" . ?A)
 	("MEETING" . ?M)
 	("REMINDER" . ?r)
-	("QUICKLINK" . ?q)
+	(:startgroup)
+	(:grouptags)
+	("SUBJECT" . ?S)
+	("Index" . ?I)
+	("Tool" . ?s)
+	("Article" . ?a)
+	("Book" . ?b)
+	("Video" . ?v)
+	("Concept" . ?c)
+	("Idea" . ?i)
+	("Note" . ?n)
+	("Technique" . ?T)
+	(:endgroup)
 	))
 
 (setq org-todo-keywords
