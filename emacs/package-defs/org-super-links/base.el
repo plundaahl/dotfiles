@@ -1,5 +1,9 @@
 ;; -*- mode: elisp -*-
 
+(defun pcl/wrapped-org-super-links-get-location ()
+  (let ((org-refile-targets '((org-agenda-files :regexp . "*"))))
+    (org-super-links-get-location)))
+
 (use-package org-super-links
   :after org
   :quelpa (org-super-links
@@ -22,4 +26,5 @@
    ("C-c s s" . org-super-links-link)
    ("C-c s c" . org-super-links-link-to-last-capture))
   :config
+  (setq org-super-links-search-function 'pcl/wrapped-org-super-links-get-location)
   )
