@@ -160,8 +160,8 @@ SCHEDULED: %T"
 		     :empty-lines 1
 		     :time-prompt t)
 
-     ("t" "Templates")
-     ("td" "Design" entry
+     ("T" "Templates")
+     ("Td" "Design" entry
       (file+headline "~/org/inbox.org" "Notes")
       (file "~/dotfiles/emacs/capture-templates/work/design-template.org")
       :empty-lines-after 1
