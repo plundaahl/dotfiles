@@ -50,6 +50,15 @@
 (setq org-habit-show-done-always-green nil)
 (setq org-habit-show-habits-only-for-today nil)
 
+(setq org-refile-targets
+      '((org-agenda-files :tag . "SUBJECT")
+	(org-agenda-files :tag . "PROJECT")
+	(org-agenda-files :tag . "REFILE_TGT")))
+(setq org-refile-use-outline-path 'file)
+
+(setq org-agenda-skip-function
+      '(org-agenda-skip-entry-if 'regexp ":ROUTINE:"))
+
 (setq org-agenda-files
       '(
 	"~/org/!Tasks.org"
@@ -89,6 +98,7 @@
 	("thought" . ?t)
 	("video" . ?v)
 	(:endgroup)
+	("REFILE_TGT" . ?x)
 	))
 
 (setq org-tags-exclude-from-inheritance
@@ -102,6 +112,7 @@
 	"AREA"
 	;; KNOWLEDGE MANAGEMENT
 	"SUBJECT"
+	"REFILE_TGT"
 	))
 
 (setq org-agenda-custom-commands
@@ -373,6 +384,8 @@
 	     (tags "+HIGH-IGNORE" ((org-agenda-overriding-header "Highs")))
 	     (tags "+LOW_OR_STRUGGLE-IGNORE" ((org-agenda-overriding-header "Lows/Struggles")))
 	     (tags "+LEARNING-IGNORE" ((org-agenda-overriding-header "Learnings")))
+             (tags "+JOURNAL-IGNORE-ACCOMPLISHMENT-DISAPPOINTMENT-HIGH-LOW_OR_STRUGGLE-LEARNING"
+		   ((org-agenda-overriding-header "Misc")))
 	     )
 	    ((org-agenda-skip-function
 	      '(pcl/org-skip-unless
