@@ -24,6 +24,7 @@
 	))
 (setq org-priority-lowest ?F)
 (setq org-priority-default ?F)
+(setq org-log-done "time")
 
 (setq org-tags-exclude-from-inheritance
       '("PROJECT"
@@ -67,12 +68,17 @@
 (setq org-todo-keywords
       '((sequence
 	 ;; Standard Tasks
-	 "BLOCKED(b)"
 	 "TODO(t)"
 	 "NEXT(n)"
 	 "|"
 	 "DONE(d)"
 	 "CANCELLED(c)"
+	 )
+	(sequence
+	 ;; Other
+	 "BLOCKED(b)"
+	 "WAITING(w)"
+	 "|"
 	 )
 	(sequence
 	 ;; Meetings
@@ -160,8 +166,8 @@ SCHEDULED: %T"
 		     :empty-lines 1
 		     :time-prompt t)
 
-     ("t" "Templates")
-     ("td" "Design" entry
+     ("T" "Templates")
+     ("Td" "Design" entry
       (file+headline "~/org/inbox.org" "Notes")
       (file "~/dotfiles/emacs/capture-templates/work/design-template.org")
       :empty-lines-after 1
