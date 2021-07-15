@@ -112,7 +112,7 @@
 		   (org-agenda-skip-deadline-if-done t)
 		   (org-agenda-hide-tags-regexp "\\|*")
 		   ))
-	  (tags "+CLOSED>\"<-1d>\""
+	  (tags "+CLOSED>=\"<today>\""
 		((org-agenda-overriding-header "Complete"))))
 	 ((org-agenda-tag-filter-preset
 	   '("-INACTIVE"))))
